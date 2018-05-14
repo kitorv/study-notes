@@ -1,2 +1,2 @@
-> #### JavaScriptÄ¿Â¼
-* [JavaScript¼ò½é](/JavaScript/JavaScript¼ò½é.md)
+ï»¿> #### JavaScriptç›®å½•
+* [JavaScriptç®€ä»‹](/JavaScript/JavaScriptç®€ä»‹.md)
