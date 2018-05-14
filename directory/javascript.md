@@ -1,2 +1,2 @@
 ﻿> #### JavaScript目录
-* [JavaScript简介](../JavaScript/JavaScript简介.md)
+* [JavaScript简介](../javascript/JavaScript简介.md)
