@@ -1,3 +1,3 @@
-### 目录
-> #### JavaScript高级程序设计
-* [第一章 JavaScript简介](/JavaScript高级程序设计/第一章-JavaScript简介.md)
+> 目录
+* [JavaScript](/directory/javascript.md)
+* [node](/directory/node.md)
