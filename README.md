@@ -4,5 +4,5 @@
 
 > ### [JavaScript](directory/javascript.md)
 
-> ### [node](directory/node.md)
+> ### [Node](directory/node.md)
 
