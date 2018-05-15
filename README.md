@@ -1,8 +1,8 @@
 ﻿## 前端学习记录
-##  [目录](SUMMARY.md)
-## 内容概述
-> ### 1.JavaScript
 
-> ### 2.Node
+### 目录
 
+> ### [JavaScript](directory/javascript.md)
+
+> ### [node](directory/node.md)
 
