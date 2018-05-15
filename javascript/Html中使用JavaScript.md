@@ -3,12 +3,12 @@
 在Html页面中使用JavaScript主要方法就是使用script标签
 > ### script的6个属性
 - async：异步加载脚本，不确定各个脚本执行顺序，脚本加载完成后执行
-``` JavaScript
+``` Html
 <script type="text/javascript" async="async" src="example1.js"></script>
 ```
 - charset：字符集设置，一般不使用浏览器会默认
 - defer：文档解析完成后在执行文件
-``` JavaScript
+``` Html
 <script type="text/javascript" defer="defer" src="example1.js"></script>
 ```
 - language：已经废弃，指定JavaScript的版本号
@@ -33,7 +33,7 @@
 页面的时间缩短而感到打开页面的速度加快了。
 ## JavaScript 嵌入代码与外部文件
 - 页面直接书写JavaScript代码
-```JavaScript
+```Html
 <script type="text/javascript">
     function sayHi(){ alert("Hi!"); }
 </script>
