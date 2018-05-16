@@ -22,3 +22,22 @@
 4. 单击安装文件，直接一直下一步知道安装完成
 5. 打开命令行cmd输入`node --version`或者`node -v`指令输出Node的版本号即Node安装完成
 6. 继续在命令工具继续输入`npm --version`或者`npm -v`指令输出npm的版本号即npm安装完成
+### 运行第一个JavaScript文件
+1. 创建helloworld.js文件
+```JavaScript
+console.log("Hello World");
+```
+2. 打开cmd命令控制台
+3. 切换到helloworld.js的目录，命令控制台输入代码
+```
+cd helloworld.js所在的文件目录
+```
+4. 输入执行命令回车执行
+```JavaScript
+node helloworld.js
+```
+5. 命令控制台输出
+```JavaScript
+Hello World
+```
+6. 第一个node文件运行完成
