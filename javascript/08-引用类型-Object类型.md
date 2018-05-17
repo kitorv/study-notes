@@ -160,11 +160,11 @@ alert(colors3); //green,blue,yellow
 ```
 - splice方法
 
-    |   参数    |   描述   |   
-    |   :-               |   :-                         |  
-    |  index  |   必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。  | 
-    |  howmany  |   必需。要删除的项目数量。如果设置为 0，则不会删除项目。  |  
-    |  item1, ..., itemX  |   可选。向数组添加的新项目。  | 
+ |   参数    |   描述   |   
+ |   :-               |   :-                         |  
+ |  index  |   必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。  | 
+ |  howmany  |   必需。要删除的项目数量。如果设置为 0，则不会删除项目。  |  
+ |  item1, ..., itemX  |   可选。向数组添加的新项目。  | 
 
 ``` JavaScript
 var colors = ["red", "green", "blue"];
@@ -196,9 +196,75 @@ alert(numbers.lastIndexOf(4, 4)); //3 参数：搜索值，开始索引
 >使用indexOf()和lastIndexOf()方法查找特定项在数组中的位置非常简单，支持它们的浏览器包
 括IE9+、Firefox 2+、Safari 3+、Opera 9.5+和Chrome。
 #### 8. 迭代方法
-
+- every()：对数组中的每一项运行给定函数，如果该函数对每一项都返回true，则返回true。
+``` JavaScript
+var numbers = [1,2,3,4,5,4,3,2,1];
+var everyResult = numbers.every(function(item, index, array){
+    return (item > 2);
+});
+alert(everyResult); //false
+```
+- some()：对数组中的每一项运行给定函数，如果该函数对任一项返回true，则返回true。
+``` JavaScript
+var someResult = numbers.some(function(item, index, array){
+    return (item > 2);
+});
+alert(someResult); //true
+```
+- filter()：对数组中的每一项运行给定函数，返回该函数会返回true 的项组成的数组。
+``` JavaScript
+var numbers = [1,2,3,4,5,4,3,2,1];
+    var filterResult = numbers.filter(function(item, index, array){
+return (item > 2);
+});
+alert(filterResult); //[3,4,5,4,3]
+```
+- forEach()：对数组中的每一项运行给定函数。这个方法没有返回值。
+``` JavaScript
+var numbers = [1,2,3,4,5,4,3,2,1];
+    numbers.forEach(function(item, index, array){
+//执行某些操作
+});
+```
+- map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
+``` JavaScript
+var numbers = [1,2,3,4,5,4,3,2,1];
+var mapResult = numbers.map(function(item, index, array){
+    return item * 2;
+});
+alert(mapResult); //[2,4,6,8,10,8,6,4,2]
+```
+#### 8. 归并方法
+- reduce方法
+``` JavaScript
+var values = [1,2,3,4,5];
+var sum = values.reduce(function(prev, cur, index, array){
+    return prev + cur;
+});
+alert(sum); //15=>1+2+3+4+5
+```
+- reduceRight方法
+``` JavaScript
+var values = [1,2,3,4,5];
+var sum = values.reduceRight(function(prev, cur, index, array){
+    return prev + cur;
+});
+alert(sum); //15=>5+4+3+2+1
+```
 ### Date类型
+- 时间转换
+``` JavaScript
+var someDate = new Date(Date.parse("May 25, 2004"));
+```
+- 时间比较：Date 类型的valueOf()方法，则根本不返回字符串，而是返回日期的毫秒表示
+``` JavaScript
+var date1 = new Date(2007, 0, 1); //"January 1, 2007"
+var date2 = new Date(2007, 1, 1); //"February 1, 2007"
+alert(date1 < date2); //true
+alert(date1 > date2); //false
+```
+<!--
 ### RegExp类型
 ### Function类型
 ### 基本包装类型
-### 单体内置对象
+### 单体内置对象-->
