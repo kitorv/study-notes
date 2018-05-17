@@ -5,3 +5,4 @@
 4. [操作符](../javascript/04-操作符.md)
 4. [基本语句](../javascript/05-基本语句.md)
 4. [函数](../javascript/06-函数.md)
+4. [变量、作用域和内存问题](../javascript/07-变量、作用域和内存问题.md)
