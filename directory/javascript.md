@@ -4,3 +4,4 @@
 3. [语法和数据类型](../javascript/03-语法和数据类型.md)
 4. [操作符](../javascript/04-操作符.md)
 4. [基本语句](../javascript/05-基本语句.md)
+4. [函数](../javascript/06-函数.md)
