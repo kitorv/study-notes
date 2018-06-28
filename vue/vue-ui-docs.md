@@ -63,7 +63,8 @@
 ├─examples  // 原 src 目录，改成 examples 用作示例展示
 │  │  App.vue //主页文件
 │  │  main.js //项目入口文件
-│  │  logo.png //项目入口文件
+│  │
+│  ├─docs //markdown帮助文档文件夹
 │  │
 │  └─router
 │          index.js //路由配置文件
@@ -101,3 +102,44 @@
 
   - 修改`App.vue`的代码和引用
   - 启动项目`npm run dev`有错误就根据错误调整，直到可以正常访问不在报错
+
+## 6. 解析`markdown`文件
+
+- 通过`markdown`写帮助文档然后解析为页面，参考`饿了么UI` 组件库的使用 [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader)
+  将`markdown`文件解析为`vue`组件直接页面渲染,安装`vue-markdown-loader`直接执行命令
+  >
+- 配置`webpack`加载器解析`markdown`，在`vue-loader.conf.js`在属性`rules`追加配置加载器
+
+```JavaScript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader'
+      }
+    ]
+  }
+};
+```
+
+- 在`docs`文件下创建第一个`markdown`文件，`test.md`
+
+```html
+# test
+> Hello World
+```
+
+- 配置路由
+
+```JavaScript
+  routes: [{
+    path: '/test',
+    name: 'test',
+    component: r => require.ensure([], () => r(require('../docs/test.md')))
+  }]
+```
+
+- 浏览器访问`http://localhost:8080/#/test`,正确的将`markdown`解析为 vue 组件并正确初始化路由
+
+![vue](vue-ui-docs/11.png)
