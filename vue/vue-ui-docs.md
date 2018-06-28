@@ -63,6 +63,7 @@
 ├─examples  // 原 src 目录，改成 examples 用作示例展示
 │  │  App.vue //主页文件
 │  │  main.js //项目入口文件
+│  │  logo.png //项目入口文件
 │  │
 │  └─router
 │          index.js //路由配置文件
@@ -77,3 +78,26 @@
 ```
 
 - 由于目录调整需要调整对应的`webpack`配置才可以启动项目
+
+  - 删除`examples\router\index.js`的无效代码
+  - 找到`\build\webpack.base.conf.js`文件进行配置调整
+  - 修改`webpack`的主文件入口
+
+  ```JavaScript
+  entry: {
+    app: './examples/main.js',
+  }
+  ```
+
+  - 修改`webpack`编译配置
+
+  ```JavaScript
+  {
+    test: /\.js$/,
+    loader: 'babel-loader',
+    include: [resolve('examples'), resolve('src')]
+  }
+  ```
+
+  - 修改`App.vue`的代码和引用
+  - 启动项目`npm run dev`有错误就根据错误调整，直到可以正常访问不在报错
