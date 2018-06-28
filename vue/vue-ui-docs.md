@@ -54,3 +54,26 @@
 - 打开浏览器输入`http://localhost:8080`访问
 
 ![vue](vue-ui-docs/09.png)
+
+## 5. 环境调整
+
+- 目录结构调整和文件创建
+
+```JavaScript
+├─examples  // 原 src 目录，改成 examples 用作示例展示
+│  │  App.vue //主页文件
+│  │  main.js //项目入口文件
+│  │
+│  └─router
+│          index.js //路由配置文件
+│
+├─src // 新增 src 用于编写存放组件
+│  │  index.js  //组件集成统一访问文件配置
+│  │
+│  ├─components  //组件文件夹
+│  ├─directives //自定义指令文件夹
+│  ├─mixins //混入文件
+│  └─styles //样式文件夹
+```
+
+- 由于目录调整需要调整对应的`webpack`配置才可以启动项目
