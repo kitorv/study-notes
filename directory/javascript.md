@@ -1,10 +1,11 @@
-﻿> #### JavaScript目录
-1. [JavaScript简介](../javascript/01-JavaScript简介.md)
-2. [Html中使用JavaScript](../javascript/02-Html中使用JavaScript.md)
-3. [语法和数据类型](../javascript/03-语法和数据类型.md)
-4. [操作符](../javascript/04-操作符.md)
-5. [基本语句](../javascript/05-基本语句.md)
-6. [函数](../javascript/06-函数.md)
-7. [变量、作用域和内存问题](../javascript/07-变量、作用域和内存问题.md)
-8. [引用类型（一）](../javascript/08-引用类型（一）.md)
-9. [引用类型（二）](../javascript/09-引用类型（二）.md)
+﻿# JavaScript 目录
+
+1.  [JavaScript 简介](../javascript/01-JavaScript简介.md)
+2.  [Html 中使用 JavaScript](../javascript/02-Html中使用JavaScript.md)
+3.  [语法和数据类型](../javascript/03-语法和数据类型.md)
+4.  [操作符](../javascript/04-操作符.md)
+5.  [基本语句](../javascript/05-基本语句.md)
+6.  [函数](../javascript/06-函数.md)
+7.  [变量、作用域和内存问题](../javascript/07-变量、作用域和内存问题.md)
+8.  [引用类型（一）](../javascript/08-引用类型（一）.md)
+9.  [引用类型（二）](../javascript/09-引用类型（二）.md)
