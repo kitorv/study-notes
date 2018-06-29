@@ -317,6 +317,12 @@ export default {
 </style>
 ```
 
+- `vue-markdown-loader`依赖了`highlight`在`App.vue`的样式中引用进行代码着色，风格参照`highlight.js`自己引用
+
+```css
+@import 'highlight.js/styles/color-brewer.css';
+```
+
 - 在`main.js`配置全局安装组件，让每个`md`文件都可以自动编译成 vue 组件并且渲染代码块
 
 ```javascript
