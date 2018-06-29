@@ -317,6 +317,13 @@ export default {
 </style>
 ```
 
+- 在`main.js`配置全局安装组件，让每个`md`文件都可以自动编译成 vue 组件并且渲染代码块
+
+```javascript
+import DemoBlock from './components/demo-block.vue'
+Vue.component('demo-block', DemoBlock)
+```
+
 - `webpack.base.conf.js`配置`vue-markdown-loader`的`options`属性
   - 将`demo`代码块解析，在 markdown 用`demo-block`组件包裹
   - 安装`npm install markdown-it-container --save-dev`
