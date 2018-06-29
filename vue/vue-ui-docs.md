@@ -107,7 +107,7 @@
 
 - 通过`markdown`写帮助文档然后解析为页面，参考`饿了么UI` 组件库的使用 [vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader)
   将`markdown`文件解析为`vue`组件直接页面渲染,安装`vue-markdown-loader`直接执行命令
-  >
+  > npm install vue-markdown-loader --save-dev
 - 配置`webpack`加载器解析`markdown`，在`vue-loader.conf.js`在属性`rules`追加配置加载器
 
 ```JavaScript
@@ -143,3 +143,222 @@ module.exports = {
 - 浏览器访问`http://localhost:8080/#/test`,正确的将`markdown`解析为 vue 组件并正确初始化路由
 
 ![vue](vue-ui-docs/11.png)
+
+## 7. 解析代码块和示例生成
+
+- 代码块示例
+
+````html
+:::demo ### 描述标题
+
+```html
+<template>
+    <img src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+</template>
+<script>
+    console.log(1)
+</script>
+```
+
+:::
+
+
+```
+````
+
+- 将示例的`markdown`编译成以下效果
+
+![vue](vue-ui-docs/12.png)
+上面为`代码执行示例`，`中间为描述信息`，`底部为代码示例`
+
+- 开发一个`demo-block`用于显示代码块的组件
+
+```html
+<template>
+  <div class="demo-block">
+    <div class="demo-block-source">
+      <slot name="source"></slot>
+      <span class="demo-block-code-icon"
+        v-if="!$slots.default"
+        @click="showCode=!showCode"><img alt="expand code"
+          src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"
+          class="code-expand-icon-show"></span>
+    </div>
+    <div class="demo-block-meta"
+      v-if="$slots.default">
+      <slot></slot>
+      <span v-if="$slots.default"
+        class="demo-block-code-icon"
+        @click="showCode=!showCode"><img alt="expand code"
+          src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"
+          class="code-expand-icon-show"></span>
+    </div>
+    <div class="demo-block-code"
+      v-show="showCode">
+      <slot name="highlight"></slot>
+    </div>
+  </div>
+</template>
+<script type="text/babel">
+
+export default {
+  data() {
+    return {
+      showCode: false
+    };
+  }
+};
+</script>
+<style>
+.demo-block {
+  border: 1px solid #ebedf0;
+  border-radius: 2px;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  margin: 0 0 16px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border-radius: 2px;
+}
+.demo-block p {
+  padding: 0;
+  margin: 0;
+}
+.demo-block .demo-block-code-icon {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+.demo-block .demo-block-code-icon img {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  vertical-align: baseline;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.demo-block .demo-block-source {
+  border-bottom: 1px solid #ebedf0;
+  padding: 20px 24px 20px;
+  color: #444;
+  position: relative;
+  margin-bottom: -1px;
+}
+.demo-block .demo-block-meta {
+  position: relative;
+  padding: 12px 50px 12px 20px;
+  border-radius: 0 0 2px 2px;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #444;
+  font-size: 14px;
+  line-height: 2;
+  border-radius: 0;
+  border-bottom: 1px dashed #ebedf0;
+  margin-bottom: -1px;
+}
+.demo-block .demo-block-meta code {
+  color: #444;
+  background-color: #e6effb;
+  margin: 0 4px;
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 3px;
+  height: 18px;
+  line-height: 18px;
+  font-family: Menlo, Monaco, Consolas, Courier, monospace;
+  font-size: 14px;
+}
+.demo-block .demo-block-code {
+  background-color: #f7f7f7;
+  font-size: 0;
+}
+.demo-block .demo-block-code code {
+  background-color: #f7f7f7;
+  font-family: Consolas, Menlo, Courier, monospace;
+  border: none;
+  display: block;
+  font-size: 14px;
+  padding: 16px 32px;
+}
+.demo-block .demo-block-code pre {
+  margin: 0;
+  padding: 0;
+}
+.sh-checkbox {
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+}
+</style>
+```
+
+- `webpack.base.conf.js`配置`vue-markdown-loader`的`options`属性
+  - 将`demo`代码块解析，在 markdown 用`demo-block`组件包裹
+  - 安装`npm install markdown-it-container --save-dev`
+  - 对 options 进行配置完成效果渲染
+
+```javascript
+const markdownRender = require('markdown-it')();
+
+{
+  test: /\.md$/,
+  loader: 'vue-markdown-loader',
+  options: {
+    preventExtract: true,
+    use: [
+      [require('markdown-it-container'), 'demo', {
+
+        validate: function (params) {
+          return params.trim().match(/^demo\s+(.*)$/);
+        },
+
+        render: function (tokens, idx) {
+          if (tokens[idx].nesting === 1) {
+            // 1.获取第一行的内容使用markdown渲染html作为组件的描述
+            let demoInfo = tokens[idx].info.trim().match(/^demo\s+(.*)$/);
+            let description = (demoInfo && demoInfo.length > 1) ? demoInfo[1] : '';
+            let descriptionHTML = description ? markdownRender.render(description) : '';
+            // 2.获取代码块内的html和js代码
+            let content = tokens[idx + 1].content;
+            // 3.使用自定义开发组件【DemoBlock】来包裹内容并且渲染成案例和代码示例
+            return `<demo-block>
+            <div class="source" slot="source">${content}</div>
+            ${descriptionHTML}
+            <div class="highlight" slot="highlight">`;
+          } else {
+            return '</div></demo-block>\n';
+          }
+        }
+      }]
+    ]
+
+  }
+}
+```
+
+- 重新运行`npm run dev`得到预期的效果
