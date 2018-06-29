@@ -369,3 +369,108 @@ const markdownRender = require('markdown-it')();
 ```
 
 - 重新运行`npm run dev`得到预期的效果
+
+- 对`App.vue`样式和排版布局进行调整
+  ![vue](vue-ui-docs/13.png)
+
+## 8. 开发第一个组件
+
+- 开发一个按钮组件，在`src\components`下开发`kt-button.vue`按钮组件
+
+```html
+<template>
+    <div class="kt-button">
+      <slot></slot>
+    </div>
+</template>
+<script>
+export default {
+    name: 'KtButton'
+}
+</script>
+<style>
+.kt-button {
+  border: 1px solid #41a259;
+  background-color: #41a259;
+  display: inline-block;
+  border-radius: 2px;
+  height: 14px;
+  line-height: 14px;
+  color: #fff;
+  padding: 10px 19px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+</style>
+```
+
+- 在`examples\docs`下创建`button.md`进行文档编写和代码示例
+
+````html
+# Button 按钮
+
+## 基础用法
+
+:::demo 通过`plain`属性可以设置为朴素的按钮
+
+```html
+<kt-button>确认</kt-button>
+```
+
+:::
+
+```
+````
+
+- 路由配置
+
+```javascript
+export default new Router({
+  routes: [
+    {
+      path: '/test',
+      name: 'test',
+      component: r => require.ensure([], () => r(require('../docs/test.md')))
+    },
+    {
+      path: '/button',
+      name: 'button',
+      component: r => require.ensure([], () => r(require('../docs/button.md')))
+    }
+  ]
+})
+```
+
+- 首页链接配置
+
+```html
+<router-link to="/button">button 组件</router-link>
+```
+
+- 配置`src`下的的`index.js`
+
+```javascript
+import KtButton from './components/kt-button.vue'
+
+const components = [KtButton]
+
+export default function(Vue) {
+  components.map(component => {
+    Vue.component(component.name, component)
+  })
+}
+```
+
+- `main.js`安装所有的组件，让所有的`docs`下的`md`文件都可以调用
+
+```javascript
+import install from '../src/index'
+install(Vue)
+```
+
+- 效果预览，组件开发完成
+  ![vue](vue-ui-docs/14.png)
+
+## 8. 代码下载
+
+- 下载：[github](https://github.com/kitorv/vue-ui-docs)
