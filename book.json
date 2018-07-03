@@ -4,7 +4,7 @@
     "description": "学习过程的记录",
     "language": "zh-hans",
     "gitbook": ">= 3.0.0",
-    "plugins": ["github", "anchors", "-lunr", "-search", "search-plus"],
+    "plugins": ["github", "anchors", "-lunr", "-search", "search-plus", "expandable-chapters-small"],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
