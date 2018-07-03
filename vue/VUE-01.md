@@ -4,15 +4,15 @@
 
 - 打开`cmd`命令工具，输入`npm install -g vue-cli`全局安装 vue-cli
 
-![vue](vue-ui-docs/01.png)
+![vue](images/01.png)
 
 - 安装过程慢，切换到淘宝镜像源`npm config set registry https://registry.npm.taobao.org`
 
 ## 2. 构建 vue-cli 项目
 
-- 打开`cmd`，进入想要创建项目的目录下，输入：`vue init webpack vue-ui-docs`,回车
+- 打开`cmd`，进入想要创建项目的目录下，输入：`vue init webpack images`,回车
 
-![vue](vue-ui-docs/02.png)
+![vue](images/02.png)
 
 - 等待初始化完成根据控制台输入命令完成接下去的操作
 
@@ -25,35 +25,35 @@
   - Setup unit tests with Karma + Mocha ：——测试可以不安装
   - Setup e2e tests with Nightwatch ：——测试可以不安装
 
-![vue](vue-ui-docs/03.png)
+![vue](images/03.png)
 
 ## 3. 构建完成初始化项目依赖
 
 - 初始化完成目录结构
 
-![vue](vue-ui-docs/04.png)
+![vue](images/04.png)
 
-- 切换到目录 `cd C:\Users\jccf\Desktop\vue-ui-docs`,执行命令`npm install`
+- 切换到目录 `cd C:\Users\jccf\Desktop\images`,执行命令`npm install`
 
-![vue](vue-ui-docs/05.png)
+![vue](images/05.png)
 
 - 开始安装依赖环境
 
-![vue](vue-ui-docs/06.png)
+![vue](images/06.png)
 
 - 依赖环境安装完成
 
-![vue](vue-ui-docs/07.png)
+![vue](images/07.png)
 
 ## 4. 启动项目
 
 - 打开`cmd`，进入到项目所在目录下，输入`npm run dev`,回车，启动项目
 
-![vue](vue-ui-docs/08.png)
+![vue](images/08.png)
 
 - 打开浏览器输入`http://localhost:8080`访问
 
-![vue](vue-ui-docs/09.png)
+![vue](images/09.png)
 
 ## 5. 环境调整
 
@@ -142,7 +142,7 @@ module.exports = {
 
 - 浏览器访问`http://localhost:8080/#/test`,正确的将`markdown`解析为 vue 组件并正确初始化路由
 
-![vue](vue-ui-docs/11.png)
+![vue](images/11.png)
 
 ## 7. 解析代码块和示例生成
 
@@ -168,7 +168,7 @@ module.exports = {
 
 - 将示例的`markdown`编译成以下效果
 
-![vue](vue-ui-docs/12.png)
+![vue](images/12.png)
 上面为`代码执行示例`，`中间为描述信息`，`底部为代码示例`
 
 - 开发一个`demo-block`用于显示代码块的组件
@@ -377,7 +377,7 @@ const markdownRender = require('markdown-it')();
 - 重新运行`npm run dev`得到预期的效果
 
 - 对`App.vue`样式和排版布局进行调整
-  ![vue](vue-ui-docs/13.png)
+  ![vue](images/13.png)
 
 ## 8. 开发第一个组件
 
@@ -475,8 +475,8 @@ install(Vue)
 ```
 
 - 效果预览，组件开发完成
-  ![vue](vue-ui-docs/14.png)
+  ![vue](images/14.png)
 
 ## 8. 代码下载
 
-- 下载：[github](https://github.com/kitorv/vue-ui-docs)
+- 下载：[github](https://github.com/kitorv/images)

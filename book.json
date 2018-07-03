@@ -1,0 +1,28 @@
+{
+    "title": "学习笔记",
+    "author": "Kitorv",
+    "description": "学习过程的记录",
+    "language": "zh-hans",
+    "gitbook": ">= 3.0.0",
+    "plugins": ["github", "anchors", "-lunr", "-search", "search-plus"],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "fontsettings": {
+            "family": "sans",
+            "size": 1
+        },
+        "sharing": {
+            "weibo": false,
+            "facebook": false,
+            "twitter": false,
+            "google": false,
+            "instapaper": false,
+            "vk": false
+        },
+        "github": {
+            "url": "https://github.com/kitorv/study-notes"
+        }
+    }
+}

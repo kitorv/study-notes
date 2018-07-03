@@ -1,9 +1,9 @@
-﻿# 学习记录
+# 学习笔记
 
-## 目录
+## 笔记目录
 
-### [JavaScript](directory/javascript.md)
+### 1. [JavaScript](JAVASCRIPT.md)
 
-### [Node](directory/node.md)
+### 2. [Node](NODE.md)
 
-### [Vue](directory/vue.md)
+### 3. [Vue](VUE.md)
