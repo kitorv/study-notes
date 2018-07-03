@@ -479,4 +479,4 @@ install(Vue)
 
 ## 8. 代码下载
 
-- 下载：[github](https://github.com/kitorv/images)
+- 下载：[github](https://github.com/kitorv/vue-ui-docs)
