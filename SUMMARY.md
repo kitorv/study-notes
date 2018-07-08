@@ -12,5 +12,6 @@
   - [引用类型-2](javascript/JAVASCRIPT-09.md)
 - [Node 目录](NODE.md)
   - [Node 简介以及环境安装](node/NODE-01.md)
+  - [EventEmitter 和模块系统](node/NODE-02.md)
 - [Vue 目录](VUE.md)
   - [从 Vue-cli 开始构建 UI 库到 Markdown 生成文档和演示案例](vue/VUE-01.md)
