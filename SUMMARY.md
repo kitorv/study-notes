@@ -1,6 +1,5 @@
 # Summary
 
-- [介绍](README.md)
 - [JavaScript 目录](JAVASCRIPT.md)
   - [JavaScript 简介](javascript/JAVASCRIPT-01.md)
   - [Html 中使用 JavaScript](javascript/JAVASCRIPT-02.md)
