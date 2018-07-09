@@ -17,3 +17,7 @@
   - [常用系统模块](node/NODE-03.md)
 - Vue
   - [从 Vue-cli 开始构建 UI 库到 Markdown 生成文档和演示案例](vue/VUE-01.md)
+- Java
+  - [Java 基础-01](java/JAVA-01.md)
+  - [Java 基础-02](java/JAVA-02.md)
+  - [Java 基础-03](java/JAVA-03.md)
