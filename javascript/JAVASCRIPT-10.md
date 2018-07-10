@@ -297,15 +297,120 @@ function Person(name, age, job) {
 
 ### 1. 原型链
 
+ECMAScript 中描述了原型链的概念，并将原型链作为实现继承的主要方法。其基本思想是利用原
+型让一个引用类型继承另一个引用类型的属性和方法
+
+```javascript
+function SuperType() {
+  this.property = true
+}
+SuperType.prototype.getSuperValue = function() {
+  return this.property
+}
+function SubType() {
+  this.subproperty = false
+}
+//继承了SuperType
+SubType.prototype = new SuperType()
+SubType.prototype.getSubValue = function() {
+  return this.subproperty
+}
+var instance = new SubType()
+alert(instance.getSuperValue()) //true
+```
+
 ### 2. 借用构造函数
+
+```javascript
+function SuperType() {
+  this.colors = ['red', 'blue', 'green']
+}
+function SubType() {
+  //继承了SuperType
+  SuperType.call(this)
+}
+var instance1 = new SubType()
+instance1.colors.push('black')
+alert(instance1.colors) //"red,blue,green,black"
+var instance2 = new SubType()
+alert(instance2.colors) //"red,blue,green"
+```
 
 ### 3. 组合继承
 
+```javascript
+function SuperType(name) {
+  this.name = name
+  this.colors = ['red', 'blue', 'green']
+}
+SuperType.prototype.sayName = function() {
+  alert(this.name)
+}
+function SubType(name, age) {
+  //继承属性
+  SuperType.call(this, name)
+  this.age = age
+}
+//继承方法
+SubType.prototype = new SuperType()
+SubType.prototype.constructor = SubType
+SubType.prototype.sayAge = function() {
+  alert(this.age)
+}
+var instance1 = new SubType('Nicholas', 29)
+instance1.colors.push('black')
+alert(instance1.colors) //"red,blue,green,black"
+instance1.sayName() //"Nicholas";
+instance1.sayAge() //29
+var instance2 = new SubType('Greg', 27)
+alert(instance2.colors) //"red,blue,green"
+instance2.sayName() //"Greg";
+instance2.sayAge() //27
+```
+
 ### 4. 原型式继承
+
+```javascript
+function object(o) {
+  function F() {}
+  F.prototype = o
+  return new F()
+}
+```
 
 ### 5. 寄生式继承
 
+```javascript
+function createAnother(original) {
+  var clone = object(original) //通过调用函数创建一个新对象
+  clone.sayHi = function() {
+    //以某种方式来增强这个对象
+    alert('hi')
+  }
+  return clone //返回这个对象
+}
+```
+
 ### 6. 寄生组合式继承
+
+```javascript
+function SuperType(name) {
+  this.name = name
+  this.colors = ['red', 'blue', 'green']
+}
+SuperType.prototype.sayName = function() {
+  alert(this.name)
+}
+function SubType(name, age) {
+  SuperType.call(this, name) //第二次调用SuperType()
+  this.age = age
+}
+SubType.prototype = new SuperType() //第一次调用SuperType()
+SubType.prototype.constructor = SubType
+SubType.prototype.sayAge = function() {
+  alert(this.age)
+}
+```
 
 ## 面向对象设计
 

@@ -11,6 +11,7 @@
   - [函数](javascript/JAVASCRIPT-06.md)
   - [引用类型-1](javascript/JAVASCRIPT-08.md)
   - [引用类型-2](javascript/JAVASCRIPT-09.md)
+  - [面向对象的程序设计](javascript/JAVASCRIPT-10.md)
 - Node
   - [Node 简介以及环境安装](node/NODE-01.md)
   - [EventEmitter 和模块系统](node/NODE-02.md)
