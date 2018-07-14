@@ -5,6 +5,10 @@
     "language": "zh-hans",
     "gitbook": ">= 3.0.0",
     "plugins": ["github", "anchors", "-lunr", "-search", "search-plus"],
+    "structure": {
+        "readme": "README.md",
+        "summary": "README.md"
+    },
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
