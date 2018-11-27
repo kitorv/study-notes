@@ -1,8 +1,8 @@
 <template>
   <div class="k-snippet">
-    <div class="k-snippet--title">
+    <h2 class="k-snippet--title">
       <slot name="title"></slot>
-    </div>
+    </h2>
     <slot></slot>
   </div>
 </template>
