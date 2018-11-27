@@ -22,7 +22,7 @@ export default {
 
   .k-snippet--title {
     border-bottom: 1px solid rgba(0, 32, 128, 0.1);
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.3;
     margin-bottom: 1.25rem;
     margin-top: 0;
@@ -76,7 +76,14 @@ export default {
       border: none;
       color: #fff;
     }
+
     &.k-snippet--tag-javascript {
+      background-image: linear-gradient(135deg, #ffb000, #f58818);
+      border: none;
+      color: #fff;
+    }
+
+    &.k-snippet--tag-explanation {
       background-image: linear-gradient(135deg, #00cbfd, #01c5ae);
       border: none;
       color: #fff;
