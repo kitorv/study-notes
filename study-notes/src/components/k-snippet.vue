@@ -59,7 +59,7 @@ export default {
     border-bottom-color: #b3c9e3;
     border-radius: 3px;
     box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
-    padding: 0 0.5rem;
+    padding: 0 0.8rem;
     text-transform: uppercase;
     display: inline-block;
     font-size: 1.1rem;
@@ -99,7 +99,7 @@ export default {
     border-radius: 0.25rem;
     color: #d7ecff;
     font-family: Consolas, Menlo, Courier, monospace;
-    font-size: 1.1rem;
+    font-size: 1rem;
     hyphens: none;
     line-height: 2;
     margin: 0;
@@ -111,6 +111,10 @@ export default {
     word-wrap: normal;
     overflow: auto;
     padding: 0.75rem 1.25rem;
+
+    code {
+      font-family: Consolas, Menlo, Courier, monospace;
+    }
   }
 
   .hljs-tag {
