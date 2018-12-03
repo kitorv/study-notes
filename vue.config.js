@@ -18,7 +18,6 @@ module.exports = {
         raw: true,
         preventExtract: true,
         preprocess: function(markdownIt, source) {
-          console.log("-----------------------------xxxx")
           return source
             .replace(/\`\`\`html/g, "+++snippet \n+++\n```html")
             .replace(/\`\`\`css/g, "---snippet \n---\n```css")

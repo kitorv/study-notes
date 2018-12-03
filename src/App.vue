@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import url("./assets/style/icon.scss");
 html,
 body {
   padding: 0;

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "iconfont"; /* project id 947725 */
+  src: url("//at.alicdn.com/t/font_947725_s2d1qww98di.eot");
+  src: url("//at.alicdn.com/t/font_947725_s2d1qww98di.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_947725_s2d1qww98di.woff") format("woff"), url("//at.alicdn.com/t/font_947725_s2d1qww98di.ttf") format("truetype"), url("//at.alicdn.com/t/font_947725_s2d1qww98di.svg#iconfont") format("svg");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.k-icon-close:before {
+  content: "\e8e7";
+}
+
+.k-icon-menu:before {
+  content: "\f038";
+}
+
+[class*="k-icon-"],
+[class^="k-icon-"] {
+  font-family: iconfont !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
