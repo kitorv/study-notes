@@ -206,6 +206,10 @@ export default {
     width: 100%;
     z-index: 2;
 
+    .k-icon-close {
+      transform: rotate(45deg);
+    }
+
     > button {
       background-color: transparent;
       border: 0;
@@ -218,10 +222,12 @@ export default {
       overflow: visible;
       padding: 1rem;
       text-transform: none;
-      transition-duration: 0.15s;
-      transition-property: opacity, filter;
-      transition-timing-function: linear;
       font-size: 1.5rem;
+      transition: all 0.1s ease-out;
+
+      &.k-icon-close {
+        transform: rotate(90deg);
+      }
     }
 
     > div {
