@@ -34,12 +34,20 @@ let value = 123456
 
 :::
 
-:::snippet 片段标题 2
+:::snippet 片段标题 
 
 ```html
-<template> </template>
+<template></template>
 ```
 
-## vue 组件配置
+```css
+.md-class {
+  color: #333333;
+}
+```
+
+```javascript
+let value = 123456
+```
 
 :::
