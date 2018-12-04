@@ -4,9 +4,9 @@
       <button @click="showMenu = !showMenu" :class="menuClass"></button>
       <k-transition-collapse>
         <div v-show="showMenu">
-          <template v-for="({url,name},index) in routeList">
-            <h3 v-if="!url" :key="index">{{name}}</h3>
-            <router-link v-else :key="index" :to="url" @click.native="handleRouteLinkClick">{{name}}</router-link>
+          <template v-for="({path,name},index) in routeList">
+            <h3 v-if="!convertUrl(path)" :key="index">{{name}}</h3>
+            <router-link v-else :key="index" :to="convertUrl(path)" @click.native="handleRouteLinkClick">{{name}}</router-link>
           </template>
         </div>
       </k-transition-collapse>
@@ -25,6 +25,7 @@
 <script>
 import KTransitionCollapse from '@/components/k-transition-collapse'
 import clickoutside from '@/directives/clickoutside'
+import routeList from "@/setting"
 
 export default {
   name: "home",
@@ -36,12 +37,7 @@ export default {
     return {
       windowWidth: document.body.clientWidth,
       showMenu: true,
-      routeList: [
-        { url: '', name: 'Javascript基础' },
-        { url: '/home/javascript-01', name: 'Javascript概要' },
-        { url: '', name: '计划' },
-        { url: '/home/plan', name: '每日复习' },
-      ]
+      routeList: routeList
     }
   },
   computed: {
@@ -71,6 +67,11 @@ export default {
     handleRouteLinkClick() {
       this.$refs.main.scrollTop = 0
       this.handleClickOutSide()
+    },
+    convertUrl(path) {
+      let pathArray = path.split(".")
+      pathArray.pop()
+      return pathArray.join("")
     }
   },
   mounted() {
