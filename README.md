@@ -20,19 +20,17 @@ npm install
 npm run serve
 ```
 
-打包代码
+打包发布
 
 ```bash
 npm run build
 ```
 
-> 打包完成后可以直接发布到服务器，也可以配置`github pages`发布
-
 ## 文档编写
 
 ### `markdown`文件编写
 
-用`:::snippet`,`:::`包裹内容
+用`:::snippet`和`:::`包裹内容
 
 ````md
 :::snippet 片段标题
