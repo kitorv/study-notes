@@ -11,10 +11,12 @@
         </div>
       </k-transition-collapse>
     </div>
-    <div class="k-v-home--main">
+    <div class="k-v-home--main" ref="main">
       <div class="k-v-home--main-banner">Study Notes</div>
       <div class="k-v-home--main-content">
-        <router-view></router-view>
+        <transition name="k-fade-in">
+          <router-view></router-view>
+        </transition>
       </div>
     </div>
   </div>
@@ -61,7 +63,8 @@ export default {
       this.showMenu = false
     },
     handleRouteLinkClick() {
-      this.showMenu = false
+      this.$refs.main.scrollTop = 0
+      this.handleClickOutSide()
     }
   },
   mounted() {
@@ -170,6 +173,16 @@ export default {
     h1 {
       font-size: 2rem;
     }
+  }
+
+  .k-fade-in-enter-active,
+  .k-fade-in-leave-active {
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+
+  .k-fade-in-enter,
+  .k-fade-in-leave-active {
+    opacity: 0;
   }
 }
 
