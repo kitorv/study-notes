@@ -5,56 +5,28 @@
       <k-transition-collapse>
         <div v-show="showMenu">
           <h3>Javascript</h3>
-          <router-link to="/">Javascript概要</router-link>
-          <router-link to="/a">Html中使用JavaScript</router-link>
-          <router-link to="/b">语法和数据类型</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
-          <h3>Vue</h3>
-          <router-link to="/a">Vue1</router-link>
-          <router-link to="/b">Vue2</router-link>
+          <router-link to="/home/javascript-01" @click.native="handleRouteLinkClick">Javascript概要</router-link>
+          <h3>plan</h3>
+          <router-link to="/home/plan" @click.native="handleRouteLinkClick">复习计划</router-link>
         </div>
       </k-transition-collapse>
     </div>
     <div class="k-v-home--main">
       <div class="k-v-home--main-banner">Study Notes</div>
       <div class="k-v-home--main-content">
-        <k-test></k-test>
+        <router-view></router-view>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import KTest from '@/notes/test.md'
 import KTransitionCollapse from '@/components/k-transition-collapse'
 import clickoutside from '@/directives/clickoutside'
 
 export default {
   name: "home",
-  components: { KTest, KTransitionCollapse },
+  components: { KTransitionCollapse },
   directives: {
     clickoutside
   },
@@ -86,6 +58,9 @@ export default {
   methods: {
     handleClickOutSide() {
       if (this.mediaClass != 'k-v-home--s') return
+      this.showMenu = false
+    },
+    handleRouteLinkClick() {
       this.showMenu = false
     }
   },
@@ -234,7 +209,7 @@ export default {
       max-height: 378px;
       overflow-y: auto;
       box-sizing: border-box;
-      padding: 0 0.75rem;
+      padding: 0 0.75rem 0.5rem 0.75rem;
       border-top: 1px solid #5f73a5;
     }
   }
