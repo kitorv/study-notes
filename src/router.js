@@ -7,6 +7,7 @@ Vue.use(Router)
 let children = []
 let firtPath = null
 routeList.forEach(({ path }) => {
+  if (!path) return
   let pathArray = path.split(".")
   pathArray.pop()
   let url = pathArray.join("")
