@@ -17,7 +17,8 @@ module.exports = [
         }
         // 2.代码块包裹
         return `
-        <k-snippet title="${description}">`
+        <k-snippet title>
+        <template slot="title">${description}</template>`
       } else {
         return `
         </k-snippet>\n`
