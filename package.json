@@ -23,6 +23,7 @@
     "markdown-it": "^8.4.2",
     "markdown-it-container": "^2.0.0",
     "node-sass": "^4.9.0",
+    "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.0.1",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.17"
