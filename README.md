@@ -8,13 +8,13 @@
 
 ## 运行环境搭建
 
-使用 npm 安装环境运营依赖
+安装依赖
 
 ```bash
 npm install
 ```
 
-运行项目
+运行项目,浏览器访问`http://localhost:8080`
 
 ```bash
 npm run serve
