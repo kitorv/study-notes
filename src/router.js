@@ -1,8 +1,24 @@
 import Vue from "vue"
 import Router from "vue-router"
+import routeList from "@/setting"
 
 Vue.use(Router)
 
+let children = []
+let firtPath = null
+routeList.forEach(({ path }) => {
+  let pathArray = path.split(".")
+  pathArray.pop()
+  let url = pathArray.join("")
+  if (!firtPath) {
+    firtPath = url
+  }
+  children.push({
+    path: url,
+    name: url,
+    component: () => import(`.${path}`)
+  })
+})
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
@@ -13,20 +29,9 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      redirect: "/home/javascript-01",
+      redirect: firtPath,
       component: () => import("@/views/home.vue"),
-      children: [
-        {
-          path: "/home/javascript-01",
-          name: "plan",
-          component: () => import("@/notes/test.md")
-        },
-        {
-          path: "/home/plan",
-          name: "plan",
-          component: () => import("@/views/plan.vue")
-        }
-      ]
+      children: children
     }
   ]
 })
