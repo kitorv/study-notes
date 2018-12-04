@@ -4,10 +4,10 @@
       <button @click="showMenu = !showMenu" :class="menuClass"></button>
       <k-transition-collapse>
         <div v-show="showMenu">
-          <h3>Javascript</h3>
-          <router-link to="/home/javascript-01" @click.native="handleRouteLinkClick">Javascript概要</router-link>
-          <h3>plan</h3>
-          <router-link to="/home/plan" @click.native="handleRouteLinkClick">复习计划</router-link>
+          <template v-for="({url,name},index) in routeList">
+            <h3 v-if="!url" :key="index">{{name}}</h3>
+            <router-link v-else :key="index" to="/home/javascript-01" @click.native="handleRouteLinkClick">{{name}}</router-link>
+          </template>
         </div>
       </k-transition-collapse>
     </div>
@@ -35,7 +35,13 @@ export default {
   data() {
     return {
       windowWidth: document.body.clientWidth,
-      showMenu: true
+      showMenu: true,
+      routeList: [
+        { url: '', name: 'Javascript基础' },
+        { url: '/home/javascript-01', name: 'Javascript概要' },
+        { url: '', name: '计划' },
+        { url: '/home/plan', name: '每日复习' },
+      ]
     }
   },
   computed: {

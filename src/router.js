@@ -13,7 +13,7 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      redirect: "/home/plan",
+      redirect: "/home/javascript-01",
       component: () => import("@/views/home.vue"),
       children: [
         {
