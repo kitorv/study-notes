@@ -44,7 +44,7 @@ export default {
       for (const key in planMap) {
         rows.push({ date: key, rows: planMap[key] })
       }
-      rows.sort()
+      rows.sort((x, y) => moment(x.date).unix() - moment(y.date).unix())
       return rows
     }
   }
