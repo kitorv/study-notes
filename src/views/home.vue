@@ -6,7 +6,7 @@
         <div v-show="showMenu">
           <template v-for="({url,name},index) in routeList">
             <h3 v-if="!url" :key="index">{{name}}</h3>
-            <router-link v-else :key="index" to="/home/javascript-01" @click.native="handleRouteLinkClick">{{name}}</router-link>
+            <router-link v-else :key="index" :to="url" @click.native="handleRouteLinkClick">{{name}}</router-link>
           </template>
         </div>
       </k-transition-collapse>
