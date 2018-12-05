@@ -2,7 +2,7 @@
 
 ## 在线笔记
 
- [www.kitorv.com](http://www.kitorv.com)
+[www.kitorv.com](http://www.kitorv.com)
 
 基于 vue 搭建笔记内容使用`markdown`文件编写，自动编译成网站
 
@@ -14,13 +14,13 @@
 npm install
 ```
 
-运行项目,浏览器访问`http://localhost:8080`
+运行项目，浏览器访问`http://localhost:8080`
 
 ```bash
 npm run serve
 ```
 
-打包发布
+打包发布，编译成静态的 html 文件
 
 ```bash
 npm run build
@@ -55,26 +55,17 @@ let value = 123456
 自动编译成效果
 ![vue](src/assets/images/snippet-example.png)
 
-### `router.js`文件配置
+### `setting.js`文件配置
 
-配置 md 文件的加载路径
-
-```javascript
-children: [
-    {
-        path: "/home/javascript-01",name: "plan",
-        component: () => import("@/notes/test.md")
-    }
-]
-```
-
-### `home.vue`文件配置
-
-没有`url`地址生成标题，`url`对应`router.js`的`path`路径
+配置 md 文件的加载路径,`url`为 markdown 的文件路径，没填写会生成分组标题，`name`菜单命名必填
 
 ```javascript
-routeList: [
-    { url: "", name: "Javascript基础" },
-    { url: "/home/javascript-01", name: "Javascript概要" }
-]
+module.exports = {
+  routes: [
+    { path: "", name: "测试分组" },
+    { path: "/notes/test.md", name: "测试" },
+    { path: "/notes/test1.md", name: "测试1" },
+    { path: "/notes/test2.md", name: "测试2" }
+  ]
+}
 ```
