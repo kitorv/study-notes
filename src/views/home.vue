@@ -8,6 +8,10 @@
             <h3 v-if="!convertUrl(path)" :key="index">{{name}}</h3>
             <router-link v-else :key="index" :to="convertUrl(path)" @click.native="handleRouteLinkClick">{{name}}</router-link>
           </template>
+          <template v-if="showPlan">
+            <h3>复习计划</h3>
+            <router-link to="/plan" @click.native="handleRouteLinkClick">复习时间表</router-link>
+          </template>
         </div>
       </k-transition-collapse>
     </div>
@@ -61,6 +65,9 @@ export default {
     },
     menuClass() {
       return this.showMenu ? 'k-icon-close' : 'k-icon-menu'
+    },
+    showPlan() {
+      return localStorage.getItem('page-plan')
     }
   },
   methods: {

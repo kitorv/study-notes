@@ -4,7 +4,13 @@ import { routes } from "@/setting"
 
 Vue.use(Router)
 
-let children = []
+let children = [
+  {
+    path: "/plan",
+    name: "plan",
+    component: () => import("@/views/plan.vue")
+  }
+]
 let firtPath = null
 routes.forEach(({ path }) => {
   if (!path) return

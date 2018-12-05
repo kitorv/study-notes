@@ -1,6 +1,5 @@
 <template>
   <div class="k-v-plan">
-
     <k-snippet v-for="({date,rows}, index) in planGroupList" :key="index" :title="date">
       <div v-for="(content,index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`">
         {{ content }}
@@ -47,10 +46,12 @@ export default {
       rows.sort((x, y) => moment(x.date).unix() - moment(y.date).unix())
       return rows
     }
+  },
+  mounted() {
+    localStorage.setItem('page-plan', true)
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .k-v-plan {
