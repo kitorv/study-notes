@@ -1,12 +1,12 @@
 import Vue from "vue"
 import Router from "vue-router"
-import routeList from "@/setting"
+import { routes } from "@/setting"
 
 Vue.use(Router)
 
 let children = []
 let firtPath = null
-routeList.forEach(({ path }) => {
+routes.forEach(({ path }) => {
   if (!path) return
   let pathArray = path.split(".")
   pathArray.pop()

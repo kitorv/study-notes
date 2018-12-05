@@ -25,7 +25,7 @@
 <script>
 import KTransitionCollapse from '@/components/k-transition-collapse'
 import clickoutside from '@/directives/clickoutside'
-import routeList from "@/setting"
+import { routes } from "@/setting"
 
 export default {
   name: "home",
@@ -37,7 +37,7 @@ export default {
     return {
       windowWidth: document.body.clientWidth,
       showMenu: true,
-      routeList: routeList
+      routeList: routes
     }
   },
   computed: {

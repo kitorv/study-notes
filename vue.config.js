@@ -6,6 +6,16 @@ const kMarkdownSnippetJavascript = require("./webpack/k-markdown-snippet-javascr
 const PrerenderSPAPlugin = require("prerender-spa-plugin")
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 const path = require("path")
+const { routes } = require("./src/setting")
+
+let staticRouteList = ["/"]
+routes.forEach(({ path }) => {
+  if (!path) return
+  let pathArray = path.split(".")
+  pathArray.pop()
+  let url = pathArray.join("")
+  staticRouteList.push(url)
+})
 
 module.exports = {
   // 配置【vue-markdown-loader】解析md格式的文件
@@ -27,7 +37,12 @@ module.exports = {
             .replace(/\`\`\`css/g, "---snippet \n---\n```css")
             .replace(/\`\`\`javascript/g, "===snippet \n===\n```javascript")
         },
-        use: [kMarkdownSnippet, kMarkdownSnippetHtml, kMarkdownSnippetCss, kMarkdownSnippetJavascript]
+        use: [
+          kMarkdownSnippet,
+          kMarkdownSnippetHtml,
+          kMarkdownSnippetCss,
+          kMarkdownSnippetJavascript
+        ]
       })
   },
   configureWebpack: config => {
@@ -41,7 +56,7 @@ module.exports = {
           staticDir: path.join(__dirname, "dist"),
 
           // 对应自己的路由文件，比如a有参数，就需要写成 /a/param1。
-          routes: ["/", "/home/plan"],
+          routes: staticRouteList,
 
           // 这个很重要，如果没有配置这段，也不会进行预编译
           renderer: new Renderer({
