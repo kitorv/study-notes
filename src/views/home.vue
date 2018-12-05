@@ -12,7 +12,10 @@
       </k-transition-collapse>
     </div>
     <div class="k-v-home--main" ref="main">
-      <div class="k-v-home--main-banner">Study Notes</div>
+      <div class="k-v-home--main-banner">
+        <div>Study Notes</div>
+        <a class="k-v-home--main-link" :href="github"><i class="k-icon-star"></i>Star on GitHub</a>
+      </div>
       <div class="k-v-home--main-content">
         <transition name="k-fade-in">
           <router-view></router-view>
@@ -25,7 +28,7 @@
 <script>
 import KTransitionCollapse from '@/components/k-transition-collapse'
 import clickoutside from '@/directives/clickoutside'
-import { routes } from "@/setting"
+import { routes, github } from "@/setting"
 
 export default {
   name: "home",
@@ -37,7 +40,8 @@ export default {
     return {
       windowWidth: document.body.clientWidth,
       showMenu: true,
-      routeList: routes
+      routeList: routes,
+      github: github
     }
   },
   computed: {
@@ -146,7 +150,7 @@ export default {
     .k-v-home--main-banner {
       background: #5b67ff;
       background: linear-gradient(25deg, #95e2ff, #5f79ff, #8ed5ff);
-      color: #fff;
+      color: #ffffff;
       margin-bottom: 2rem;
       overflow: hidden;
       padding: 5rem 1rem 4rem;
@@ -165,6 +169,28 @@ export default {
         position: absolute;
         width: 100%;
         z-index: 3;
+      }
+
+      > a {
+        position: relative;
+        text-decoration: none;
+        background: none;
+        color: #ffffff;
+        padding: 10px 20px;
+        white-space: nowrap;
+        border-radius: 4px;
+        transition: background-color 0.12s, color 0.12s, border-color 0.12s;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #ffffff;
+        font-weight: 700;
+        font-size: 17px;
+        font-weight: bold;
+
+        > i {
+          margin-right: 10px;
+          font-size: 20px;
+        }
       }
     }
 

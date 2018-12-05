@@ -57,10 +57,12 @@ let value = 123456
 
 ### `setting.js`文件配置
 
-配置 md 文件的加载路径,`url`为 markdown 的文件路径，没填写会生成分组标题，`name`菜单命名必填
-
 ```javascript
 module.exports = {
+  // github的地址
+  github: "https://github.com/kitorv/study-notes",
+  // 1.url：markdown的文件路径，不配置生成分组标题
+  // 2.name：生成菜单标题或者分组标题，必填
   routes: [
     { path: "", name: "测试分组" },
     { path: "/notes/test.md", name: "测试" },
