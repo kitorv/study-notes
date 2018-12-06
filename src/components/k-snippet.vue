@@ -11,7 +11,7 @@ export default {
   props: {
     title: String
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .k-snippet {
@@ -187,4 +187,3 @@ export default {
   }
 }
 </style>
-

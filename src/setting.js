@@ -9,4 +9,4 @@ module.exports = {
     { path: "/notes/test1.md", name: "测试1" },
     { path: "/notes/test2.md", name: "测试2" }
   ]
-}
+};

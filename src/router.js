@@ -1,8 +1,8 @@
-import Vue from "vue"
-import Router from "vue-router"
-import { routes } from "@/setting"
+import Vue from "vue";
+import Router from "vue-router";
+import { routes } from "@/setting";
 
-Vue.use(Router)
+Vue.use(Router);
 
 let children = [
   {
@@ -10,27 +10,27 @@ let children = [
     name: "plan",
     component: () => import("@/views/plan.vue")
   }
-]
-let firtPath = null
+];
+let firtPath = null;
 routes.forEach(({ path }) => {
-  if (!path) return
-  let pathArray = path.split(".")
-  pathArray.pop()
-  let url = pathArray.join("")
+  if (!path) return;
+  let pathArray = path.split(".");
+  pathArray.pop();
+  let url = pathArray.join("");
   if (!firtPath) {
-    firtPath = url
+    firtPath = url;
   }
   children.push({
     path: url,
     name: url,
     component: () => import(`.${path}`)
-  })
-})
+  });
+});
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   scrollBehavior() {
-    return { x: 0, y: 0 }
+    return { x: 0, y: 0 };
   },
   routes: [
     {
@@ -41,4 +41,4 @@ export default new Router({
       children: children
     }
   ]
-})
+});

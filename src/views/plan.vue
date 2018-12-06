@@ -9,48 +9,48 @@
 </template>
 
 <script>
-import moment from 'dayjs'
+import moment from "dayjs";
 
 export default {
   data() {
     return {
       planList: [
-        { date: '2018-11-30', content: 'test0' },
-        { date: '2018-12-01', content: 'test1' },
-        { date: '2018-12-02', content: 'test2' },
-        { date: '2018-12-03', content: 'test3' },
-        { date: '2018-12-04', content: 'test4' },
-        { date: '2018-12-05', content: 'test5' },
+        { date: "2018-11-30", content: "test0" },
+        { date: "2018-12-01", content: "test1" },
+        { date: "2018-12-02", content: "test2" },
+        { date: "2018-12-03", content: "test3" },
+        { date: "2018-12-04", content: "test4" },
+        { date: "2018-12-05", content: "test5" }
       ]
-    }
+    };
   },
   computed: {
     planGroupList() {
-      let planMap = {}
-      let intervalList = [1, 2, 4, 7, 15, 30, 60]
+      let planMap = {};
+      let intervalList = [1, 2, 4, 7, 15, 30, 60];
       this.planList.forEach(({ date, content }) => {
         intervalList.forEach(interval => {
-          let reviewDate = moment(date).add(interval, 'days');
-          if (reviewDate.isBefore(moment().add(-1, 'days'), 'day')) return
-          let reviewDateFormat = reviewDate.format("YYYY-MM-DD")
+          let reviewDate = moment(date).add(interval, "days");
+          if (reviewDate.isBefore(moment().add(-1, "days"), "day")) return;
+          let reviewDateFormat = reviewDate.format("YYYY-MM-DD");
           if (!planMap[reviewDateFormat]) {
-            planMap[reviewDateFormat] = []
+            planMap[reviewDateFormat] = [];
           }
-          planMap[reviewDateFormat].push(content)
+          planMap[reviewDateFormat].push(content);
         });
       });
-      let rows = []
+      let rows = [];
       for (const key in planMap) {
-        rows.push({ date: key, rows: planMap[key] })
+        rows.push({ date: key, rows: planMap[key] });
       }
-      rows.sort((x, y) => moment(x.date).unix() - moment(y.date).unix())
-      return rows
+      rows.sort((x, y) => moment(x.date).unix() - moment(y.date).unix());
+      return rows;
     }
   },
   mounted() {
-    localStorage.setItem('page-plan', true)
+    localStorage.setItem("page-plan", true);
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

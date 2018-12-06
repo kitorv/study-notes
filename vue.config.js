@@ -1,21 +1,21 @@
-const kMarkdownSnippet = require("./webpack/k-markdown-snippet.js")
-const kMarkdownSnippetHtml = require("./webpack/k-markdown-snippet-html.js")
-const kMarkdownSnippetCss = require("./webpack/k-markdown-snippet-css.js")
-const kMarkdownSnippetJavascript = require("./webpack/k-markdown-snippet-javascript.js")
+const kMarkdownSnippet = require("./webpack/k-markdown-snippet.js");
+const kMarkdownSnippetHtml = require("./webpack/k-markdown-snippet-html.js");
+const kMarkdownSnippetCss = require("./webpack/k-markdown-snippet-css.js");
+const kMarkdownSnippetJavascript = require("./webpack/k-markdown-snippet-javascript.js");
 
-const PrerenderSPAPlugin = require("prerender-spa-plugin")
-const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
-const path = require("path")
-const { routes } = require("./src/setting")
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+const path = require("path");
+const { routes } = require("./src/setting");
 
-let staticRouteList = ["/"]
+let staticRouteList = ["/"];
 routes.forEach(({ path }) => {
-  if (!path) return
-  let pathArray = path.split(".")
-  pathArray.pop()
-  let url = pathArray.join("")
-  staticRouteList.push(url)
-})
+  if (!path) return;
+  let pathArray = path.split(".");
+  pathArray.pop();
+  let url = pathArray.join("");
+  staticRouteList.push(url);
+});
 
 module.exports = {
   // 配置【vue-markdown-loader】解析md格式的文件
@@ -33,9 +33,9 @@ module.exports = {
         preventExtract: true,
         preprocess: function(markdownIt, source) {
           return source
-            .replace(/\`\`\`html/g, "+++snippet \n+++\n```html")
-            .replace(/\`\`\`css/g, "---snippet \n---\n```css")
-            .replace(/\`\`\`javascript/g, "===snippet \n===\n```javascript")
+            .replace(/```html/g, "+++snippet \n+++\n```html")
+            .replace(/```css/g, "---snippet \n---\n```css")
+            .replace(/```javascript/g, "===snippet \n===\n```javascript");
         },
         use: [
           kMarkdownSnippet,
@@ -43,10 +43,10 @@ module.exports = {
           kMarkdownSnippetCss,
           kMarkdownSnippetJavascript
         ]
-      })
+      });
   },
-  configureWebpack: config => {
-    if (process.env.NODE_ENV !== "production") return
+  configureWebpack: () => {
+    if (process.env.NODE_ENV !== "production") return;
     return {
       plugins: [
         new PrerenderSPAPlugin({
@@ -69,6 +69,6 @@ module.exports = {
           })
         })
       ]
-    }
+    };
   }
-}
+};

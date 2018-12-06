@@ -30,9 +30,9 @@
 </template>
 
 <script>
-import KTransitionCollapse from '@/components/k-transition-collapse'
-import clickoutside from '@/directives/clickoutside'
-import { routes, github } from "@/setting"
+import KTransitionCollapse from "@/components/k-transition-collapse";
+import clickoutside from "@/directives/clickoutside";
+import { routes, github } from "@/setting";
 
 export default {
   name: "home",
@@ -46,49 +46,46 @@ export default {
       showMenu: true,
       routeList: routes,
       github: github
-    }
+    };
   },
   computed: {
     mediaClass() {
       if (this.windowWidth <= 992) {
-        this.showMenu = false
-        return 'k-v-home--s'
+        return "k-v-home--s";
       }
       if (this.windowWidth > 992 && this.windowWidth <= 1440) {
-        this.showMenu = true
-        return 'k-v-home--m'
+        return "k-v-home--m";
       }
-      if (this.windowWidth > 1440) {
-        this.showMenu = true
-        return 'k-v-home--l'
-      }
+      return "k-v-home--l";
     },
     menuClass() {
-      return this.showMenu ? 'k-icon-close' : 'k-icon-menu'
+      return this.showMenu ? "k-icon-close" : "k-icon-menu";
     },
     showPlan() {
-      return localStorage.getItem('page-plan')
+      return localStorage.getItem("page-plan");
     }
   },
   methods: {
     handleClickOutSide() {
-      if (this.mediaClass != 'k-v-home--s') return
-      this.showMenu = false
+      if (this.mediaClass != "k-v-home--s") return;
+      this.showMenu = false;
     },
     handleRouteLinkClick() {
-      this.$refs.main.scrollTop = 0
-      this.handleClickOutSide()
+      this.$refs.main.scrollTop = 0;
+      this.handleClickOutSide();
     },
     convertUrl(path) {
-      let pathArray = path.split(".")
-      pathArray.pop()
-      return pathArray.join("")
+      let pathArray = path.split(".");
+      pathArray.pop();
+      return pathArray.join("");
     }
   },
   mounted() {
     window.addEventListener("resize", () => {
-      this.windowWidth = document.body.clientWidth
-    })
+      const windowWidth = document.body.clientWidth;
+      this.windowWidth = windowWidth;
+      this.showMenu = windowWidth > 992;
+    });
   }
 };
 </script>
@@ -306,4 +303,3 @@ export default {
   }
 }
 </style>
-
