@@ -86,7 +86,7 @@ export default {
       color: #fff;
     }
 
-    &.k-snippet--tag-explanation {
+    &.k-snippet--tag-code {
       background-image: linear-gradient(135deg, #00cbfd, #01c5ae);
       border: none;
       color: #fff;

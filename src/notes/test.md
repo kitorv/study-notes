@@ -29,12 +29,18 @@
 ```
 
 ```javascript
-let value = 123456
+let value = 123456;
+```
+
+---snippet bash---
+
+```bash
+npm run build
 ```
 
 :::
 
-:::snippet 片段标题 
+:::snippet 片段标题
 
 ```html
 <template></template>
@@ -47,7 +53,7 @@ let value = 123456
 ```
 
 ```javascript
-let value = 123456
+let value = 123456;
 ```
 
 :::
