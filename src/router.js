@@ -11,14 +11,18 @@ let children = [
     component: () => import("@/views/plan.vue")
   }
 ];
-let firtPath = null;
+let firstRoute = null;
 routes.forEach(({ path }) => {
   if (!path) return;
   let pathArray = path.split(".");
   pathArray.pop();
   let url = pathArray.join("");
-  if (!firtPath) {
-    firtPath = url;
+  if (!firstRoute) {
+    firstRoute = {
+      path: "/",
+      name: "notes",
+      component: () => import(`.${path}`)
+    };
   }
   children.push({
     path: url,
@@ -32,13 +36,5 @@ export default new Router({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      redirect: firtPath,
-      component: () => import("@/views/home.vue"),
-      children: children
-    }
-  ]
+  routes: [firstRoute, ...children]
 });
