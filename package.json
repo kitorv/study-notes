@@ -26,8 +26,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "sass-loader": "^7.0.1",
     "vue-markdown-loader": "^2.4.1",
-    "vue-template-compiler": "^2.5.17",
-    "ajv": "^6.0.0"
+    "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
     "root": true,
