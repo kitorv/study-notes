@@ -2,7 +2,7 @@ const kMarkdownSnippet = require("./webpack/k-markdown-snippet.js");
 const kMarkdownSnippetHtml = require("./webpack/k-markdown-snippet-html.js");
 const kMarkdownSnippetCss = require("./webpack/k-markdown-snippet-css.js");
 const kMarkdownSnippetJavascript = require("./webpack/k-markdown-snippet-javascript.js");
-const kMarkdownSnippetCodeBlock = require("./webpack/k-markdown-snippet-code-block.js");
+const kMarkdownSnippetCode = require("./webpack/k-markdown-snippet-code.js");
 
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
@@ -43,7 +43,7 @@ module.exports = {
           kMarkdownSnippetHtml,
           kMarkdownSnippetCss,
           kMarkdownSnippetJavascript,
-          kMarkdownSnippetCodeBlock
+          kMarkdownSnippetCode
         ]
       });
   },
