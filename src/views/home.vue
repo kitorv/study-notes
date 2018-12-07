@@ -81,6 +81,7 @@ export default {
     }
   },
   mounted() {
+    this.showMenu = document.body.clientWidth > 992;
     window.addEventListener("resize", () => {
       const windowWidth = document.body.clientWidth;
       this.windowWidth = windowWidth;
