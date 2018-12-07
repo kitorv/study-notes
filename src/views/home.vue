@@ -41,9 +41,10 @@ export default {
     clickoutside
   },
   data() {
+    let windowWidth = document.body.clientWidth;
     return {
-      windowWidth: document.body.clientWidth,
-      showMenu: true,
+      windowWidth: windowWidth,
+      showMenu: windowWidth > 992,
       routeList: routes,
       github: github
     };
@@ -81,7 +82,6 @@ export default {
     }
   },
   mounted() {
-    this.showMenu = document.body.clientWidth > 992;
     window.addEventListener("resize", () => {
       const windowWidth = document.body.clientWidth;
       this.windowWidth = windowWidth;
