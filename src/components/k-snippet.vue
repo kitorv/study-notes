@@ -118,6 +118,7 @@ export default {
     border: 1px solid #95bae0;
     width: 100%;
     margin: 0.8rem 0 1rem;
+    font-size: 1rem;
 
     th,
     td {
@@ -130,7 +131,7 @@ export default {
     th {
       white-space: nowrap;
       color: #324b64;
-      font-weight: 500;
+      font-weight: 700;
       background: #f1f2f7;
     }
   }
