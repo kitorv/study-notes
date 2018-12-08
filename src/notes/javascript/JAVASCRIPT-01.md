@@ -133,7 +133,7 @@ IE5.5 引入了文档模式的概念，而这个概念是通过使用文档类�
 
 不支持 JavaScript 的浏览器中可以使用该标签来实现 JavaScript 的使用
 
-```Html
+```html
 <html>
 <head>
     <title>Example HTML Page</title>
@@ -150,5 +150,15 @@ IE5.5 引入了文档模式的概念，而这个概念是通过使用文档类�
 
 :::
 
-:::snippet Script 模板
+:::snippet Script模板
+设置`script`标签的`type`属性为`text/x-template`,然后获取标签的内容进行操作渲染
+```html
+<script type="text/x-template">
+    <!--模板内容-->
+</script>
+```
+### 模板解析
+1. script不写type默认是`text/javascript`,设置了`text/x-template`之类的浏览器不能识别的属性值渲染时就会被忽略
+2. script的type设置为类似各种`text/x-template`值就被引用定义了额外的渲染规则模板之类
+3. 浏览器不能识别自定义的script标签的type属性，渲染时被忽略，可以自定义dom操作获取内容在进行额外渲染
 :::
