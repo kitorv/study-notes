@@ -41,19 +41,6 @@ export default {
     margin: 0.5rem 0 1rem 0;
   }
 
-  .snippet h4[data-type] {
-    background: #333;
-    background: #fff;
-    background-repeat: no-repeat;
-    border: 1px solid #c6d6ea;
-    border-bottom-color: #b3c9e3;
-    border-radius: 3px;
-    box-shadow: 0 0.25rem 0.5rem -0.1rem rgba(0, 32, 64, 0.15);
-    font-size: 0.9rem;
-    padding: 0 0.5rem;
-    text-transform: uppercase;
-  }
-
   .k-snippet--tag {
     background: #333;
     background: #fff;
@@ -67,7 +54,7 @@ export default {
     display: inline-block;
     font-size: 1.1rem;
     line-height: 2;
-    margin: 1rem 0 0.8rem;
+    margin: 0.2rem 0 0.8rem;
 
     &.k-snippet--tag-html {
       background-image: linear-gradient(135deg, #ff4c9f, #ff7b74);
@@ -94,7 +81,58 @@ export default {
   }
 
   > p {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  > ol {
     margin-top: 0.5rem;
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  code:not([class*="lang"]) {
+    background: #fcfaff;
+    border: 1px solid #e2ddff;
+    border-radius: 0.15rem;
+    color: #4b00da;
+    font-family: Consolas, Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    margin: 0 0.1rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #95bae0;
+    width: 100%;
+    margin: 0.8rem 0 1rem;
+
+    th,
+    td {
+      color: #314659;
+      border: 1px solid #95bae0;
+      text-align: left;
+      padding: 10px 15px;
+    }
+
+    th {
+      white-space: nowrap;
+      color: #324b64;
+      font-weight: 500;
+      background: #f1f2f7;
+    }
   }
 
   > pre {
@@ -114,10 +152,14 @@ export default {
     word-wrap: normal;
     overflow: auto;
     padding: 0.75rem 1.25rem;
+  }
 
-    code {
-      font-family: Consolas, Menlo, Courier, monospace;
-    }
+  code {
+    font-family: Consolas, Menlo, Courier, monospace;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   .hljs-tag {
@@ -125,9 +167,12 @@ export default {
   }
 
   .hljs-comment,
-  .hljs-quote,
+  .hljs-quote {
+    color: #d7ecff;
+  }
+
   .hljs-meta {
-    color: #444;
+    color: #2cefd8;
   }
 
   .hljs-string,
