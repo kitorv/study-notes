@@ -1,40 +1,146 @@
-# JavaScript 简介
 
-## JavaScript 历史回顾
+:::snippet JavaScript历史
+1. 1995 年，Netscape 开发了 JavaScript，主要用于浏览器的交互
+2. Netscape 将 JavaScript 1.1为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA）制定了 JavaScript 的开发标准`ECMAScript`
+3. `ECMAScript`从`ECMAScript1`发展到`ECMAScript5`基本目前浏览器都兼容`ECMAScript5`的规范也就是`ES5`
+4. 2015年发布了`ECMAScript 6`，部分浏览器可能还未支持，但是可以使用编译器编译成`ECMAScript 5`的代码
+5. 现在的 ECMAScript6 是比较大的统称包含 ECMAScript2016,ECMAScript2017，后续的版本号都是依据年份来定制的
+:::
 
-1995 年，Netscape 开发了 JavaScript，主要用于浏览器的交互，后来 Netscape 将 JavaScript 1.1
-为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA）制定了 JavaScript 的开发标准`ECMAScript`。
 
-## JavaScript 的组成
+:::snippet JavaScript 的组成
+1. 核心（ECMAScript）：JavaScript的一个标准，JavaScript 只是实现了 ECMAScript 的其中一种脚本语言，ActionScript 同样也实现了 ECMAScript
+2. 文档对象模型（DOM）：XML但经过扩展用于HTML的应用程序编程接口，主要用于操作HTML的元素
+3. 浏览器对象模型（BOM）：可以控制浏览器显示的页面以外的部分，弹窗、cookies等
+:::
 
-- 核心（ECMAScript）
-- 文档对象模型（DOM）
-- 浏览器对象模型（BOM）
+:::snippet BOM主要内容
+1.  弹出新浏览器窗口的功能；
+2.  移动、缩放和关闭浏览器窗口的功能；
+3.  提供浏览器详细信息的 navigator 对象；
+4.  提供浏览器所加载页面的详细信息的 location 对象；
+5.  提供用户显示器分辨率详细信息的 screen 对象；
+6.  对 cookies 的支持；
+7.  像 XMLHttpRequest 和 IE 的 ActiveXObject 这样的自定义对象。
+:::
 
-## ECMAScript 标准
+:::snippet Html中使用JavaScript
+### 页面直接书写 JavaScript 代码
+```html
+<script type="text/javascript">
+    function sayHi(){ alert("Hi!"); }
+</script>
+```
+### 引用外部文件
+```html
+<script type="text/javascript" src="example1.js"></script>
+```
+### 引用外部文件优点
+1. 可维护性：无需触及 Html 页面直接对应的 js 文件即可更改代码
+2. 可缓存：相同的 js 文件会被浏览器缓存页面使用相同的文件，最终结果就是能够加快页面加载的速度
+3. 适应未来：通过外部文件来包含 JavaScript 无须使用前面提到 XHTML 或注释 hack。HTML 和 XHTML 包含外部文件的语法是相同的
+:::
 
-- ECMAScript
+:::snippet Script标签属性
+ ### script 的 6 个属性
 
-> JavaScript 的一个标准，JavaScript 只是实现了 ECMAScript 的其中一种脚本语言，ActionScript 同样也实现了 ECMAScript
+  | 属性  | 描述            | 
+  | :-------- | :--------------------------- |
+  | async   | 异步加载脚本，不确定各个脚本执行顺序，脚本加载完成后执行                         | 
+  | charset    | 字符集设置，一般不使用浏览器会默认              | 
+  | defer    | 文档解析完成后在执行文件 | 
+  | language    | 已经废弃，指定 JavaScript 的版本号                    |            
+  | src |                 引用外部的 js 文件           | 
+  | type |                 指定 JavaScript 的类型，一般都是`text/javascript`          | 
+  
+```html
+<script type="text/javascript" async="async" src="example1.js"></script>
+<script type="text/javascript" defer="defer" src="example1.js"></script>
+```
+:::
 
-- 文档对象模型 DOM
+:::snippet Script 的加载执行顺序
 
-> XML 但经过扩展用于 HTML 的应用程序编程接口，主要用于操作 HTML 的元素
+默认没有通过属性设置会按照放置的位置加载执行，先执行文档遇到 script 标签就执行 script 的代码或者引用外部文件在进行执行
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example HTML Page</title>
+</head>
+<body>
+    <!-- 这里放内容 -->
+    <script type="text/javascript" src="example1.js"></script>
+    <script type="text/javascript" src="example2.js"></script>
+</body>
+</html>
+```
+这样，在解析包含的 JavaScript 代码之前，页面的内容将完全呈现在浏览器中。而用户也会因为浏览器窗口显示空白
+页面的时间缩短而感到打开页面的速度加快了。
+:::
 
-- 浏览器对象模型 BOM
+:::snippet 文档模式
 
-> BOM 可以控制浏览器显示的页面以外的部分，其中包含：
+IE5.5 引入了文档模式的概念，而这个概念是通过使用文档类型（doctype）切换实现的，指定文档的解析标准，目前发展到 Html5 基本都
+使用最新的标准`<!DOCTYPE html>`
 
-    1.  弹出新浏览器窗口的功能；
-    2.  移动、缩放和关闭浏览器窗口的功能；
-    3.  提供浏览器详细信息的 navigator 对象；
-    4.  提供浏览器所加载页面的详细信息的 location 对象；
-    5.  提供用户显示器分辨率详细信息的 screen 对象；
-    6.  对 cookies 的支持；
-    7.  像 XMLHttpRequest 和 IE 的 ActiveXObject 这样的自定义对象。
+```html
+<!-- HTML 4.01 严格型 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 
-## JavaScript 的版本
+<!-- XHTML 1.0 严格型 -->
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-重要的版本为`ECMAScript 5`目前浏览器都兼容，`ECMAScript 6`部分浏览器可能还未支持，但是可以使用编译器编译成`ECMAScript 5`的代码
-ECMAScript6 发布于 2015 年也称之为 ECMAScript2016，现在的 ECMAScript6 是比较大的统称包含 ECMAScript2016,、ECMAScript2017，后续的版本号
-都是依据年份来定制的
+<!-- HTML 4.01 过渡型 -->
+<!DOCTYPE HTML PUBLIC
+"-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- HTML 4.01 框架集型 -->
+<!DOCTYPE HTML PUBLIC
+"-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+
+<!-- XHTML 1.0 过渡型 -->
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- XHTML 1.0 框架集型 -->
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Frameset//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<!-- HTML 5 -->
+<!DOCTYPE html>
+```
+:::
+
+:::snippet Noscript 标签
+
+不支持 JavaScript 的浏览器中可以使用该标签来实现 JavaScript 的使用
+
+```Html
+<html>
+<head>
+    <title>Example HTML Page</title>
+    <script type="text/javascript" defer="defer" src="example1.js"></script>
+    <script type="text/javascript" defer="defer" src="example2.js"></script>
+</head>
+<body>
+    <noscript>
+        <p>本页面需要浏览器支持（启用）JavaScript。
+    </noscript>
+</body>
+</html>
+```
+:::
+
+:::snippet Script模板
+:::
+
+
+
