@@ -1,8 +1,5 @@
-const kMarkdownSnippet = require("./webpack/k-markdown-snippet.js");
-const kMarkdownSnippetHtml = require("./webpack/k-markdown-snippet-html.js");
-const kMarkdownSnippetCss = require("./webpack/k-markdown-snippet-css.js");
-const kMarkdownSnippetJavascript = require("./webpack/k-markdown-snippet-javascript.js");
-const kMarkdownSnippetCode = require("./webpack/k-markdown-snippet-code.js");
+const kMarkdownSnippet = require("./webpack/k-markdown-snippet");
+const kMarkdownSnippetCode = require("./webpack/k-markdown-snippet-code");
 
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
@@ -33,16 +30,13 @@ module.exports = {
         raw: true,
         preventExtract: true,
         preprocess: function(markdownIt, source) {
-          return source
-            .replace(/```html/g, "^^^snippet \n^^^\n```html")
-            .replace(/```css/g, "&&&snippet \n&&&\n```css")
-            .replace(/```javascript/g, "===snippet \n===\n```javascript");
+          return source.replace(/```[a-zA-Z]+/g, value => {
+            value = value.toLowerCase();
+            return `---snippet ${value.replace(/```/g, "")} \n---\n ${value}`;
+          });
         },
         use: [
           kMarkdownSnippet,
-          kMarkdownSnippetHtml,
-          kMarkdownSnippetCss,
-          kMarkdownSnippetJavascript,
           kMarkdownSnippetCode
         ]
       });

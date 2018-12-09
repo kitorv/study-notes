@@ -55,6 +55,9 @@ export default {
     font-size: 1.1rem;
     line-height: 2;
     margin: 0.2rem 0 0.8rem;
+    background-image: linear-gradient(135deg, #00cbfd, #01c5ae);
+    border: none;
+    color: #fff;
 
     &.k-snippet--tag-html {
       background-image: linear-gradient(135deg, #ff4c9f, #ff7b74);
@@ -69,12 +72,6 @@ export default {
 
     &.k-snippet--tag-javascript {
       background-image: linear-gradient(135deg, #ffb000, #f58818);
-      border: none;
-      color: #fff;
-    }
-
-    &.k-snippet--tag-code {
-      background-image: linear-gradient(135deg, #00cbfd, #01c5ae);
       border: none;
       color: #fff;
     }
