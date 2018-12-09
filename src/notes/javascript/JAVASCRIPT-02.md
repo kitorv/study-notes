@@ -13,9 +13,9 @@
 
 ```javascript
 /*
-* 这是一个多行
-* （块级）注释
-*/
+ * 这是一个多行
+ * （块级）注释
+ */
 ```
 
 4. 严格模式： ECMAScript5 引入了严格模式（strict mode）的概念，用于高速 JavaScript 引擎切换到严格模式，严格模式下，JavaScript 的执行结果会有很大不同
@@ -81,35 +81,34 @@ alert(message); // "hi"
 ```JavaScript
 var message = "hi",found = false,age = 29;
 ```
+
 :::
 
-
 :::snippet 数据类型
-1. 5种简单数据类型（也称为基本数据类型）：`Undefined`、`Null`、`Boolean`、`Number`和`String`
-2. 数据类型都可以通过关键字`typeof`操作符，获取字段的类型
-* `undefined`未定义
-* `boolean`布尔值
-* `string`字符串
-* `number`数值
-* `object`对象或`null`
-* `function`函数
 
-```JavaScript
+1. 5 种简单数据类型（也称为基本数据类型）：`Undefined`、`Null`、`Boolean`、`Number`和`String`
+2. 数据类型都可以通过关键字`typeof`操作符，获取字段的类型
+
+- `undefined`未定义
+- `boolean`布尔值
+- `string`字符串
+- `number`数值
+- `object`对象或`null`
+- `function`函数
+
+```javascript
 alert(typeof message); // "string"
 alert(typeof (message)); // "string"
 alert(typeof 95); // "number"
 ```
-中复杂的数据类型：`Object`，，Object 本质上是由一组无序的名值对组成的
+
+中复杂的数据类型：`Object`，Object 本质上是由一组无序的名值对组成的
+
 由于`ECMAScript`数据类型具有动态性，因此的确没有再定义其他数据类型的必要了
 
 :::
 
 <!--
-
-- 
-- 1 
-- 
-
 
 ### 2. Undefined 类型
 
@@ -210,7 +209,7 @@ var floatNum2 = 10.0; // 整数=>解析为10
 var floatNum = 3.125e7; // e的科学计数法表示等于31250000
 ```
 
-- 浮点数计算  
+- 浮点数计算
   浮点数值计算会产生舍入误差的问题，这是使用基于 IEEE754 数值的浮点计算的通病
 
 ```JavaScript
@@ -246,7 +245,7 @@ alert(isNaN("blue")); //true（不能转换成数值）
 alert(isNaN(true)); //false（可以被转换成数值1）
 ```
 
-只有 0 除以 0 才会返回 NaN，正数除以 0 返回 Infinity，负数除以 0 返回-Infinity。  
+只有 0 除以 0 才会返回 NaN，正数除以 0 返回 Infinity，负数除以 0 返回-Infinity。
 isNaN()也适用于对象，先调用对象 valueOf 不能转为数值，在调用 toString()方法
 
 - 数值类型转换
@@ -325,7 +324,7 @@ parseFloat("3.125e7"); //31250000
   | \xnn     | 以十六进制代码 nn 表示的一个字符（其中 n 为 0 ～ F）。例如，\x41 表示"A"                     |
   | \unnnn   | 以十六进制代码 nnnn 表示的一个 Unicode 字符（其中 n 为 0 ～ F）。例如，\u03a3 表示希腊字符 Σ |
 
-* 字符串特点  
+* 字符串特点
   字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变
 
 ```JavaScript

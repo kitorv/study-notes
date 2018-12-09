@@ -164,7 +164,7 @@ export default {
     padding: 0.75rem 1.25rem;
   }
 
-  > pre + .k-snippet--tag{
+  pre + .k-snippet--tag {
     margin-top: 1rem;
   }
 
@@ -227,7 +227,7 @@ export default {
   .hljs-variable,
   .hljs-deletion,
   .hljs-template-tag {
-    color: #bb1166;
+    color: #ff4c9f;
   }
 
   .hljs-section,
