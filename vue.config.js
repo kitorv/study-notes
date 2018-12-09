@@ -35,10 +35,7 @@ module.exports = {
             return `---snippet ${value.replace(/```/g, "")} \n---\n ${value}`;
           });
         },
-        use: [
-          kMarkdownSnippet,
-          kMarkdownSnippetCode
-        ]
+        use: [kMarkdownSnippet, kMarkdownSnippetCode]
       });
   },
   configureWebpack: () => {

@@ -76,9 +76,7 @@ export default {
       this.handleClickOutSide();
     },
     convertUrl(path) {
-      let pathArray = path.split(".");
-      pathArray.pop();
-      return pathArray.join("");
+      return path.replace(/@/,'').replace(/.md$/,'');
     }
   },
   mounted() {

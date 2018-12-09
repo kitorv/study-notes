@@ -4,32 +4,19 @@ import { routes } from "@/setting";
 
 Vue.use(Router);
 
-let children = [
-  {
-    path: "/plan",
-    name: "plan",
-    component: () => import("@/views/plan.vue")
-  }
-];
-let firstRoute = null;
+let children = [];
 routes.forEach(({ path }) => {
   if (!path) return;
-  let pathArray = path.split(".");
-  pathArray.pop();
-  let url = pathArray.join("");
-  if (!firstRoute) {
-    firstRoute = {
-      path: "/",
-      name: "notes",
-      component: () => import(`.${path}`)
-    };
-  }
-  children.push({
-    path: url,
-    name: url,
-    component: () => import(`.${path}`)
-  });
+  let url = path.replace(/@/, "").replace(/.md$/, "");
+  children.push({ path: url, name: url, component: () => import(`.${url}.md`) });
 });
+let firstRoute = { path: "/", name: "notes", component: children[0].component };
+children.push({
+  path: "/plan",
+  name: "plan",
+  component: () => import("@/views/plan.vue")
+});
+
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,

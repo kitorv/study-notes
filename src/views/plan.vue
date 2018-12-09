@@ -1,8 +1,8 @@
 <template>
   <div class="k-v-plan">
     <k-snippet v-for="({date,rows}, index) in planGroupList" :key="index" :title="date">
-      <div v-for="(content,index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`">
-        {{ content }}
+      <div v-for="(name,index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`">
+        {{ name }}
       </div>
     </k-snippet>
   </div>
@@ -10,25 +10,20 @@
 
 <script>
 import moment from "dayjs";
+import { routes } from "@/setting";
 
 export default {
   data() {
     return {
-      planList: [
-        { date: "2018-11-30", content: "test0" },
-        { date: "2018-12-01", content: "test1" },
-        { date: "2018-12-02", content: "test2" },
-        { date: "2018-12-03", content: "test3" },
-        { date: "2018-12-04", content: "test4" },
-        { date: "2018-12-05", content: "test5" }
-      ]
+      planList:routes
     };
   },
   computed: {
     planGroupList() {
       let planMap = {};
       let intervalList = [1, 2, 4, 7, 15, 30, 60];
-      this.planList.forEach(({ date, content }) => {
+      this.planList.forEach(({ date, name ,path}) => {
+        if(!path) return;
         intervalList.forEach(interval => {
           let reviewDate = moment(date).add(interval, "days");
           if (reviewDate.isBefore(moment().add(-1, "days"), "day")) return;
@@ -36,7 +31,7 @@ export default {
           if (!planMap[reviewDateFormat]) {
             planMap[reviewDateFormat] = [];
           }
-          planMap[reviewDateFormat].push(content);
+          planMap[reviewDateFormat].push(name);
         });
       });
       let rows = [];
