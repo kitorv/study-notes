@@ -76,7 +76,7 @@ export default {
       this.handleClickOutSide();
     },
     convertUrl(path) {
-      return path.replace(/@/,'').replace(/.md$/,'');
+      return path.replace(/@/, "").replace(/.md$/, "");
     }
   },
   mounted() {
@@ -88,6 +88,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .k-v-home {
   position: relative;
