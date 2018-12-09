@@ -91,7 +91,16 @@ export default {
     margin: 1rem 0 0.5rem 0;
   }
 
-  > ol {
+  ol {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ul {
     margin-top: 0.5rem;
     padding-left: 1.25rem;
 
@@ -155,6 +164,10 @@ export default {
     padding: 0.75rem 1.25rem;
   }
 
+  > pre + .k-snippet--tag{
+    margin-top: 1rem;
+  }
+
   code {
     font-family: Consolas, Menlo, Courier, monospace;
   }
@@ -169,7 +182,7 @@ export default {
 
   .hljs-comment,
   .hljs-quote {
-    color: #d7ecff;
+    color: #20dc70;
   }
 
   .hljs-meta {

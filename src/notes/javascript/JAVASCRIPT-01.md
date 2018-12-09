@@ -5,6 +5,7 @@
 3. `ECMAScript`从`ECMAScript1`发展到`ECMAScript5`基本目前浏览器都兼容`ECMAScript5`的规范也就是`ES5`
 4. 2015 年发布了`ECMAScript 6`，部分浏览器可能还未支持，但是可以使用编译器编译成`ECMAScript 5`的代码
 5. 现在的 ECMAScript6 是比较大的统称包含 ECMAScript2016,ECMAScript2017，后续的版本号都是依据年份来定制的
+
 :::
 
 :::snippet JavaScript 的组成
@@ -12,17 +13,19 @@
 1. 核心（ECMAScript）：JavaScript 的一个标准，JavaScript 只是实现了 ECMAScript 的其中一种脚本语言，ActionScript 同样也实现了 ECMAScript
 2. 文档对象模型（DOM）：XML 但经过扩展用于 HTML 的应用程序编程接口，主要用于操作 HTML 的元素
 3. 浏览器对象模型（BOM）：可以控制浏览器显示的页面以外的部分，弹窗、cookies 等
+
 :::
 
 :::snippet BOM 主要内容
 
-1.  弹出新浏览器窗口的功能；
-2.  移动、缩放和关闭浏览器窗口的功能；
-3.  提供浏览器详细信息的 navigator 对象；
-4.  提供浏览器所加载页面的详细信息的 location 对象；
-5.  提供用户显示器分辨率详细信息的 screen 对象；
-6.  对 cookies 的支持；
-7.  像 XMLHttpRequest 和 IE 的 ActiveXObject 这样的自定义对象。
+1. 弹出新浏览器窗口的功能；
+2. 移动、缩放和关闭浏览器窗口的功能；
+3. 提供浏览器详细信息的 navigator 对象；
+4. 提供浏览器所加载页面的详细信息的 location 对象；
+5. 提供用户显示器分辨率详细信息的 screen 对象；
+6. 对 cookies 的支持；
+7. 像 XMLHttpRequest 和 IE 的 ActiveXObject 这样的自定义对象
+
 :::
 
 :::snippet Html 中使用 JavaScript
@@ -31,7 +34,9 @@
 
 ```html
 <script type="text/javascript">
-    function sayHi(){ alert("Hi!"); }
+  function sayHi() {
+    alert("Hi!");
+  }
 </script>
 ```
 
@@ -46,6 +51,7 @@
 1. 可维护性：无需触及 Html 页面直接对应的 js 文件即可更改代码
 2. 可缓存：相同的 js 文件会被浏览器缓存页面使用相同的文件，最终结果就是能够加快页面加载的速度
 3. 适应未来：通过外部文件来包含 JavaScript 无须使用前面提到 XHTML 或注释 hack。HTML 和 XHTML 包含外部文件的语法是相同的
+
 :::
 
 :::snippet Script 标签属性
@@ -73,14 +79,14 @@
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Example HTML Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 这里放内容 -->
     <script type="text/javascript" src="example1.js"></script>
     <script type="text/javascript" src="example2.js"></script>
-</body>
+  </body>
 </html>
 ```
 
@@ -95,33 +101,22 @@ IE5.5 引入了文档模式的概念，而这个概念是通过使用文档类�
 
 ```html
 <!-- HTML 4.01 严格型 -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <!-- XHTML 1.0 严格型 -->
-<!DOCTYPE html PUBLIC
-"-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <!-- HTML 4.01 过渡型 -->
-<!DOCTYPE HTML PUBLIC
-"-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <!-- HTML 4.01 框架集型 -->
-<!DOCTYPE HTML PUBLIC
-"-//W3C//DTD HTML 4.01 Frameset//EN"
-"http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 
 <!-- XHTML 1.0 过渡型 -->
-<!DOCTYPE html PUBLIC
-"-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <!-- XHTML 1.0 框架集型 -->
-<!DOCTYPE html PUBLIC
-"-//W3C//DTD XHTML 1.0 Frameset//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 
 <!-- HTML 5 -->
 <!DOCTYPE html>
@@ -135,30 +130,32 @@ IE5.5 引入了文档模式的概念，而这个概念是通过使用文档类�
 
 ```html
 <html>
-<head>
+  <head>
     <title>Example HTML Page</title>
     <script type="text/javascript" defer="defer" src="example1.js"></script>
     <script type="text/javascript" defer="defer" src="example2.js"></script>
-</head>
-<body>
-    <noscript>
-        <p>本页面需要浏览器支持（启用）JavaScript。
-    </noscript>
-</body>
+  </head>
+  <body>
+    <noscript> <p>本页面需要浏览器支持（启用）JavaScript。</p></noscript>
+  </body>
 </html>
 ```
 
 :::
 
-:::snippet Script模板
+:::snippet Script 模板
 设置`script`标签的`type`属性为`text/x-template`,然后获取标签的内容进行操作渲染
+
 ```html
 <script type="text/x-template">
-    <!--模板内容-->
+  <!--模板内容-->
 </script>
 ```
+
 ### 模板解析
-1. script不写type默认是`text/javascript`,设置了`text/x-template`之类的浏览器不能识别的属性值渲染时就会被忽略
-2. script的type设置为类似各种`text/x-template`值就被引用定义了额外的渲染规则模板之类
-3. 浏览器不能识别自定义的script标签的type属性，渲染时被忽略，可以自定义dom操作获取内容在进行额外渲染
+
+1. script 不写 type 默认是`text/javascript`,设置了`text/x-template`之类的浏览器不能识别的属性值渲染时就会被忽略
+2. script 的 type 设置为类似各种`text/x-template`值就被引用定义了额外的渲染规则模板之类
+3. 浏览器不能识别自定义的 script 标签的 type 属性，渲染时被忽略，可以自定义 dom 操作获取内容在进行额外渲染
+
 :::
