@@ -33,30 +33,30 @@ var diff = a - b; // 有效的语句——推荐
 
 :::
 
-## 变量
+:::snippet 变量
 
 ECMAScript 的变量是松散类型的，所谓松散类型就是可以用来保存任何类型的数据
 
-- 定义变量
+1. 定义变量
 
 ```JavaScript
 var message; //undefined
 ```
 
-- 定义变量初始化赋值
+2. 定义变量初始化赋值
 
 ```JavaScript
 var message = "hi";
 ```
 
-- 定义变量初始化赋值，更改变量的值
+3. 定义变量初始化赋值，更改变量的值
 
 ```JavaScript
 var message = "hi";
 message = 100; // 有效，但不推荐
 ```
 
-- 局部变量
+4. 局部变量
 
 ```JavaScript
 function test(){
@@ -66,7 +66,7 @@ test();
 alert(message); // 错误！
 ```
 
-- 默认全局变量
+5. 默认全局变量
 
 ```JavaScript
 function test(){
@@ -76,31 +76,40 @@ test();
 alert(message); // "hi"
 ```
 
-- 一次定义多个变量
+6. 一次定义多个变量
 
 ```JavaScript
 var message = "hi",found = false,age = 29;
 ```
+:::
 
-## 数据类型
 
-- 5 种简单数据类型（也称为基本数据类型）：`Undefined`、`Null`、`Boolean`、`Number`和`String`
-- 1 中复杂的数据类型：`Object`，，Object 本质上是由一组无序的名值对组成的
-- 由于 ECMAScript 数据类型具有动态性，因此的确没有再定义其他数据类型的必要了
-
-### 1. typeof 操作符
-
-- "undefined"——如果这个值未定义；
-- "boolean"——如果这个值是布尔值；
-- "string"——如果这个值是字符串；
-- "object"——如果这个值是对象或 null；
-- "function"——如果这个值是函数；
+:::snippet 数据类型
+1. 5种简单数据类型（也称为基本数据类型）：`Undefined`、`Null`、`Boolean`、`Number`和`String`
+2. 数据类型都可以通过关键字`typeof`操作符，获取字段的类型
+* `undefined`未定义
+* `boolean`布尔值
+* `string`字符串
+* `number`数值
+* `object`对象或`null`
+* `function`函数
 
 ```JavaScript
 alert(typeof message); // "string"
 alert(typeof (message)); // "string"
 alert(typeof 95); // "number"
 ```
+中复杂的数据类型：`Object`，，Object 本质上是由一组无序的名值对组成的
+由于`ECMAScript`数据类型具有动态性，因此的确没有再定义其他数据类型的必要了
+
+:::
+
+<!--
+
+- 
+- 1 
+- 
+
 
 ### 2. Undefined 类型
 
@@ -367,4 +376,4 @@ alert(String(undefined)); // "undefined"
 - toLocaleString()：返回对象的字符串表示，该字符串与执行环境的地区对应。
 - toString()：返回对象的字符串表示。
 - valueOf()：返回对象的字符串、数值或布尔值表示。通常与 toString()方法的返回值
-  相同。
+  相同。 -->
