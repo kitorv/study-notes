@@ -1,19 +1,71 @@
-export default {
-  bind(el, binding) {
-    function documentHandler(e) {
-      if (el.contains(e.target)) {
-        return false;
-      }
-      if (binding.expression) {
-        binding.value(e);
-      }
-    }
-    el.__vueClickOutside__ = documentHandler;
-    document.addEventListener("click", documentHandler);
-  },
-  update() {},
-  unbind(el) {
-    document.removeEventListener("click", el.__vueClickOutside__);
-    delete el.__vueClickOutside__;
+const isTouch =
+  typeof window !== "undefined" && ("ontouchstart" in window || navigator.msMaxTouchPoints > 0);
+const events = isTouch ? ["touchstart", "click"] : ["click"];
+
+const instances = [];
+
+function processDirectiveArguments(bindingValue) {
+  const isFunction = typeof bindingValue === "function";
+  if (!isFunction && typeof bindingValue !== "object") {
+    throw new Error("v-click-outside: Binding value must be a function or an object");
   }
+
+  return {
+    handler: isFunction ? bindingValue : bindingValue.handler,
+    middleware: bindingValue.middleware || (isClickOutside => isClickOutside),
+    events: bindingValue.events || events
+  };
+}
+
+function onEvent({ el, event, handler, middleware }) {
+  const isClickOutside = event.target !== el && !el.contains(event.target);
+  if (!isClickOutside) {
+    return;
+  }
+  if (middleware(event, el)) {
+    handler(event, el);
+  }
+}
+
+export default {
+  bind(el, { value }) {
+    const { handler, middleware, events } = processDirectiveArguments(value);
+
+    const instance = {
+      el,
+      eventHandlers: events.map(eventName => ({
+        event: eventName,
+        handler: event => onEvent({ event, el, handler, middleware })
+      }))
+    };
+
+    instance.eventHandlers.forEach(({ event, handler }) =>
+      document.addEventListener(event, handler)
+    );
+    instances.push(instance);
+  },
+  update(el, { value }) {
+    const { handler, middleware, events } = processDirectiveArguments(value);
+    const instance = instances.find(instance => instance.el === el);
+
+    instance.eventHandlers.forEach(({ event, handler }) =>
+      document.removeEventListener(event, handler)
+    );
+
+    instance.eventHandlers = events.map(eventName => ({
+      event: eventName,
+      handler: event => onEvent({ event, el, handler, middleware })
+    }));
+
+    instance.eventHandlers.forEach(({ event, handler }) =>
+      document.addEventListener(event, handler)
+    );
+  },
+  unbind(el) {
+    const instance = instances.find(instance => instance.el === el);
+    instance.eventHandlers.forEach(({ event, handler }) =>
+      document.removeEventListener(event, handler)
+    );
+  },
+  instances
 };
