@@ -56,9 +56,7 @@ npm run build
 
 ## 文档编写
 
-### `markdown`文件编写
-
-用`:::snippet`和`:::`包裹内容
+`markdown`文件编写,用`:::snippet`和`:::`包裹内容
 
 ````md
 :::snippet 片段标题
