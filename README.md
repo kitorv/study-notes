@@ -6,6 +6,10 @@
 
 基于 vue 搭建笔记内容使用`markdown`文件编写，自动编译成网站
 
+## 更新日志
+
+版本更新详细说明 [CHANGELOG](/CHANGELOG.md)
+
 ## 运行环境搭建
 
 ### Node 下载安装
@@ -82,17 +86,24 @@ let value = 123456;
 
 ![vue](src/assets/images/snippet-example.png)
 
-## `setting.js`文件配置
+## `setting.json`文件配置
+
+- `url`：非必填，markdown 的文件路径，不配置生成分组标题
+- `name`：必填，生成菜单标题或者分组标题
 
 ```javascript
-module.exports = {
-  // github的地址
-  github: "https://github.com/kitorv/study-notes",
-  // 1.url：markdown的文件路径，不配置生成分组标题
-  // 2.name：生成菜单标题或者分组标题，必填
-  routes: [
-    { path: "", name: "JavaScript基础" },
-    { path: "@/notes/javascript/JAVASCRIPT-01.md", name: "简介和使用", date: "2018-12-09" }
+{
+  "routes": [
+    { "path": "", "name": "JavaScript基础" },
+    {
+      "path": "@/notes/javascript/JAVASCRIPT-01.md",
+      "name": "简介和使用",
+      "date": "2018-12-09"
+    }
   ]
-};
+}
 ```
+
+## 部署配置
+
+发布到服务器或者部署 github 在线访问 [DEPLOY](/DEPLOY.md)
