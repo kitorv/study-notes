@@ -10,6 +10,6 @@ new Vue({
   router,
   render: h => h(App),
   mounted() {
-    document.dispatchEvent(new Event("render-event"));
+    document.dispatchEvent(new Event("prerender-spa-event"));
   }
 }).$mount("#app");

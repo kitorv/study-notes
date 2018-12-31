@@ -1,6 +1,6 @@
 <template>
-  <div :class="['k-v-home',mediaClass]">
-    <div class="k-v-home--sidebar" v-clickoutside="handleClickOutSide">
+  <div :class="['k-v-home',mediaClass]" @click="handleClickOutSide">
+    <div class="k-v-home--sidebar" @click.stop>
       <button @click="showMenu = !showMenu" :class="menuClass"></button>
       <k-transition-collapse>
         <div v-show="showMenu">
@@ -31,22 +31,19 @@
 
 <script>
 import KTransitionCollapse from "@/components/k-transition-collapse";
-import clickoutside from "@/directives/clickoutside";
-import { routes, github } from "@/setting";
+import { routes } from "../setting";
+import { repository } from "../../package";
 
 export default {
   name: "home",
   components: { KTransitionCollapse },
-  directives: {
-    clickoutside
-  },
   data() {
     let windowWidth = document.body.clientWidth;
     return {
       windowWidth: windowWidth,
       showMenu: windowWidth > 992,
       routeList: routes,
-      github: github
+      github: repository.url
     };
   },
   computed: {

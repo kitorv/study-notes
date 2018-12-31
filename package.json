@@ -1,10 +1,28 @@
 {
   "name": "study-notes",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
+  "title": "Study Notes",
+  "description": "vue+markdown编译学习博客",
+  "homepage": "http://www.kitorv.com",
+  "keywords": [
+    "vue",
+    "markdown",
+    "blog",
+    "web",
+    "frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kitorv/study-notes"
+  },
+  "bugs": {
+    "url": "https://github.com/kitorv/study-notes/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "docs": "vue-cli-service build --docs --dest docs",
+    "prerender": "vue-cli-service build --prerender",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
