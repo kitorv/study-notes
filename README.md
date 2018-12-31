@@ -44,7 +44,7 @@ cd 代码目录
 cnpm install
 ```
 
-运行项目，浏览器访问`http://localhost:8080`
+运行项目，浏览器访问
 
 ```bash
 npm run serve
@@ -90,6 +90,7 @@ let value = 123456;
 
 - `url`：非必填，markdown 的文件路径，不配置生成分组标题
 - `name`：必填，生成菜单标题或者分组标题
+- `@`默认`src`目录
 
 ```javascript
 {
