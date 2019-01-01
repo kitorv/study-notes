@@ -41,6 +41,8 @@ cd 代码目录
 安装依赖
 
 ```bash
+npm install
+# OR
 cnpm install
 ```
 
@@ -52,7 +54,7 @@ npm run serve
 vue ui
 ```
 
-打包发布，编译成静态的 html 文件
+打包发布
 
 ```bash
 npm run build
