@@ -94,6 +94,8 @@ export default {
 
     li {
       margin-bottom: 0.5rem;
+      word-break: break-all;
+      word-wrap: break-word;
     }
   }
 
@@ -103,6 +105,8 @@ export default {
 
     li {
       margin-bottom: 0.5rem;
+      word-break: break-all;
+      word-wrap: break-word;
     }
   }
 
