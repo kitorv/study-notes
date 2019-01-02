@@ -135,7 +135,6 @@ export default {
     }
 
     th {
-      white-space: nowrap;
       color: #324b64;
       font-weight: 700;
       background: #f1f2f7;
