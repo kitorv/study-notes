@@ -90,7 +90,7 @@ export default {
 
   ol {
     margin-top: 0.5rem;
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
 
     li {
       margin-bottom: 0.5rem;

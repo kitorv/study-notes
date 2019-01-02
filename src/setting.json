@@ -4,11 +4,16 @@
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用",
-      "date": "2019-01-01"
+      "date": "2019-01-02"
     },
     {
       "path": "@/notes/javascript/02.md",
-      "name": "基本概念",
+      "name": "基础类型",
+      "date": "2019-01-02"
+    },
+    {
+      "path": "@/notes/javascript/03.md",
+      "name": "操作符",
       "date": "2019-01-02"
     }
   ]
