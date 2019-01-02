@@ -18,6 +18,9 @@ npm run prerender
 
 ## 3. 在线 github 访问部署
 
+> `vue ui`可视化操作，没生成`docs`文件夹配置
+> `配置`=>`Vue CLI`=>`输出目录`=>`docs`=>`任务`=>`docs`
+
 ```bash
 npm run docs
 ```

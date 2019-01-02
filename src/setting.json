@@ -25,6 +25,16 @@
       "path": "@/notes/javascript/05.md",
       "name": "变量、作用域和内存",
       "date": ""
+    },
+    {
+      "path": "@/notes/javascript/06.md",
+      "name": "对象、时间、正则",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/07.md",
+      "name": "数组",
+      "date": ""
     }
   ]
 }

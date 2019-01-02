@@ -145,6 +145,40 @@ export default {
     }
   }
 
+  > blockquote {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+
+    > p {
+      border-left: 4px solid #f66;
+      margin: 1rem 0;
+      padding: 1rem 0 1rem 1rem;
+      background-color: #f8f8f8;
+      border-radius: 0.25rem;
+      position: relative;
+    }
+
+    > p:before {
+      content: "!";
+      background-color: #f66;
+      position: absolute;
+      top: 18px;
+      left: -12px;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 20px;
+      font-weight: bold;
+      font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial,
+        sans-serif;
+      font-size: 14px;
+    }
+  }
+
   > pre {
     background: linear-gradient(-30deg, #273149, #1c273f);
     border-radius: 0.25rem;
