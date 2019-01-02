@@ -22,7 +22,7 @@ npm run prerender
 npm run docs
 ```
 
-- 打包生成文件夹`doc`
+- 打包生成文件夹`docs`
 - `docs`文件夹提交推送到 github
 - github 项目的`setting`配置=>`GitHub Pages`选择`master branch/docs folder`
 - 保存配置生成访问地址，直接访问
