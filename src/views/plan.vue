@@ -23,7 +23,7 @@ export default {
       let planMap = {};
       let intervalList = [1, 2, 4, 7, 15, 30, 60];
       this.planList.forEach(({ date, name, path }) => {
-        if (!path) return;
+        if (!path || !date) return;
         intervalList.forEach(interval => {
           let reviewDate = moment(date).add(interval, "days");
           if (reviewDate.isBefore(moment().add(-1, "days"), "day")) return;

@@ -9,12 +9,17 @@
     {
       "path": "@/notes/javascript/02.md",
       "name": "基础类型",
-      "date": "2019-01-02"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/03.md",
       "name": "操作符",
-      "date": "2019-01-02"
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/04.md",
+      "name": "语句和函数",
+      "date": ""
     }
   ]
 }
