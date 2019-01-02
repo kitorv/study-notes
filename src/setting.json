@@ -4,7 +4,12 @@
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用",
-      "date": "2018-12-09"
+      "date": "2019-01-01"
+    },
+    {
+      "path": "@/notes/javascript/02.md",
+      "name": "基本概念",
+      "date": "2019-01-02"
     }
   ]
 }
