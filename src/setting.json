@@ -9,7 +9,7 @@
     {
       "path": "@/notes/javascript/02.md",
       "name": "基础类型",
-      "date": ""
+      "date": "2019-01-03"
     },
     {
       "path": "@/notes/javascript/03.md",
@@ -34,6 +34,16 @@
     {
       "path": "@/notes/javascript/07.md",
       "name": "数组、函数",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/08.md",
+      "name": "基本包装类型",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/09.md",
+      "name": "面向对象设计",
       "date": ""
     }
   ]
