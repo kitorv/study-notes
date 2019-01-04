@@ -26,7 +26,7 @@ export default {
         if (!path || !date) return;
         intervalList.forEach(interval => {
           let reviewDate = moment(date).add(interval, "days");
-          if (reviewDate.isBefore(moment().add(-1, "days"), "day")) return;
+          if (reviewDate.isBefore(moment(), "day")) return;
           let reviewDateFormat = reviewDate.format("YYYY-MM-DD");
           if (!planMap[reviewDateFormat]) {
             planMap[reviewDateFormat] = [];
