@@ -19,7 +19,7 @@
     {
       "path": "@/notes/javascript/04.md",
       "name": "语句和函数",
-      "date": ""
+      "date": "2019-01-06"
     },
     {
       "path": "@/notes/javascript/05.md",
@@ -49,6 +49,11 @@
     {
       "path": "@/notes/javascript/10.md",
       "name": "函数表达式",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/11.md",
+      "name": "浏览器对象模型",
       "date": ""
     }
   ]

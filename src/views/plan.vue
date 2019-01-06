@@ -21,7 +21,7 @@ export default {
   computed: {
     planGroupList() {
       let planMap = {};
-      let intervalList = [1, 2, 4, 7, 15, 30, 60];
+      let intervalList = [0, 1, 2, 4, 7, 15, 30, 60];
       this.planList.forEach(({ date, name, path }) => {
         if (!path || !date) return;
         intervalList.forEach(interval => {
