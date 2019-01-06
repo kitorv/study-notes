@@ -14,7 +14,7 @@
     {
       "path": "@/notes/javascript/03.md",
       "name": "操作符",
-      "date": "2019-01-04"
+      "date": "2019-01-05"
     },
     {
       "path": "@/notes/javascript/04.md",
@@ -44,6 +44,11 @@
     {
       "path": "@/notes/javascript/09.md",
       "name": "面向对象设计",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/10.md",
+      "name": "函数表达式",
       "date": ""
     }
   ]
