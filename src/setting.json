@@ -24,7 +24,7 @@
     {
       "path": "@/notes/javascript/05.md",
       "name": "变量、作用域和内存",
-      "date": ""
+      "date": "2019-01-07"
     },
     {
       "path": "@/notes/javascript/06.md",
@@ -53,12 +53,17 @@
     },
     {
       "path": "@/notes/javascript/11.md",
-      "name": "浏览器对象模型",
+      "name": "BOM",
       "date": ""
     },
     {
       "path": "@/notes/javascript/12.md",
       "name": "客户端检测",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/13.md",
+      "name": "DOM 类型",
       "date": ""
     }
   ]
