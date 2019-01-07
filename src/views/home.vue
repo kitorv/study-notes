@@ -10,7 +10,7 @@
           </template>
           <template v-if="showPlan">
             <h3>复习计划</h3>
-            <router-link to="/plan" @click.native="handleRouteLinkClick">复习时间表</router-link>
+            <router-link to="/plan" @click.native="handleRouteLinkClick">时间表</router-link>
           </template>
         </div>
       </k-transition-collapse>

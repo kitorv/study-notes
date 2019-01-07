@@ -55,6 +55,11 @@
       "path": "@/notes/javascript/11.md",
       "name": "浏览器对象模型",
       "date": ""
+    },
+    {
+      "path": "@/notes/javascript/12.md",
+      "name": "客户端检测",
+      "date": ""
     }
   ]
 }
