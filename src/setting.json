@@ -1,6 +1,6 @@
 {
   "routes": [
-    { "path": "", "name": "JavaScript基础" },
+    { "path": "", "name": "JavaScript 深入理解" },
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用",
@@ -69,6 +69,11 @@
     {
       "path": "@/notes/javascript/14.md",
       "name": "DOM 操作",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/15.md",
+      "name": "DOM 扩展",
       "date": ""
     }
   ]
