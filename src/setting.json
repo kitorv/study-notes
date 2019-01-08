@@ -75,6 +75,11 @@
       "path": "@/notes/javascript/15.md",
       "name": "DOM 扩展",
       "date": ""
+    },
+    {
+      "path": "@/notes/javascript/16.md",
+      "name": "DOM2 和 DOM3",
+      "date": ""
     }
   ]
 }
