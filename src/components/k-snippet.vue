@@ -136,12 +136,15 @@ export default {
       border: 1px solid #95bae0;
       text-align: left;
       padding: 10px 15px;
+      word-break: break-all;
+      word-wrap: break-word;
     }
 
     th {
       color: #324b64;
       font-weight: 700;
       background: #f1f2f7;
+      min-width: 100px;
     }
   }
 

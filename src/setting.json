@@ -65,6 +65,11 @@
       "path": "@/notes/javascript/13.md",
       "name": "DOM 类型",
       "date": ""
+    },
+    {
+      "path": "@/notes/javascript/14.md",
+      "name": "DOM 操作",
+      "date": ""
     }
   ]
 }
