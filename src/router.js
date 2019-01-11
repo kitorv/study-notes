@@ -8,7 +8,11 @@ let children = [];
 routes.forEach(({ path }) => {
   if (!path) return;
   let url = path.replace(/@/, "").replace(/.md$/, "");
-  children.push({ path: url, name: url, component: () => import(`.${url}.md`) });
+  children.push({
+    path: url,
+    name: url,
+    component: () => import(`.${url}.md`)
+  });
 });
 let firstRoute = { path: "/", name: "notes", component: children[0].component };
 children.push({

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <k-home></k-home>
+    <v-home></v-home>
   </div>
 </template>
 
 <script>
-import KHome from "@/views/home";
+import VHome from "@/views/home";
+
 export default {
-  components: { KHome }
+  components: { VHome }
 };
 </script>
-
 
 <style lang="scss">
 @import url("./assets/style/icon.scss");

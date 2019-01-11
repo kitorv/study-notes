@@ -1,7 +1,7 @@
 <template>
   <div class="k-v-plan">
     <k-snippet v-for="({date,rows}, index) in planGroupList" :key="index" :title="date">
-      <div v-for="(name,index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`">
+      <div v-for="({name,path},index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`" @click="handlePalnClick(path)">
         {{ name }}
       </div>
     </k-snippet>
@@ -22,7 +22,8 @@ export default {
     planGroupList() {
       let planMap = {};
       let intervalList = [0, 1, 2, 4, 7, 15, 30, 60];
-      this.planList.forEach(({ date, name, path }) => {
+      this.planList.forEach(plan => {
+        const { date, name, path } = plan;
         if (!path || !date) return;
         intervalList.forEach(interval => {
           let reviewDate = moment(date).add(interval, "days");
@@ -31,7 +32,7 @@ export default {
           if (!planMap[reviewDateFormat]) {
             planMap[reviewDateFormat] = [];
           }
-          planMap[reviewDateFormat].push(name);
+          planMap[reviewDateFormat].push(plan);
         });
       });
       let rows = [];
@@ -42,8 +43,11 @@ export default {
       return rows;
     }
   },
-  mounted() {
-    localStorage.setItem("page-plan", true);
+  methods: {
+    handlePalnClick(path) {
+      const url = path.replace(/@/, "").replace(/.md$/, "");
+      this.$router.push({ path: url });
+    }
   }
 };
 </script>
