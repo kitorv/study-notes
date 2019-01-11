@@ -60,6 +60,7 @@ export default {
     border-left: 5px solid #ff4c9f;
     padding: 1rem;
     margin-bottom: 0.8rem;
+    cursor: pointer;
   }
 
   .k-v-plan--item-color-0 {
