@@ -75,6 +75,12 @@ export default {
       border: none;
       color: #fff;
     }
+
+    &.k-snippet--tag-typescript {
+      background-image: linear-gradient(135deg, #ffb000, #f58818);
+      border: none;
+      color: #fff;
+    }
   }
 
   > p {

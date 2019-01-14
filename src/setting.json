@@ -44,7 +44,7 @@
     {
       "path": "@/notes/javascript/09.md",
       "name": "面向对象设计",
-      "date": "2019-01-11"
+      "date": "2019-01-14"
     },
     {
       "path": "@/notes/javascript/10.md",
@@ -84,6 +84,12 @@
     {
       "path": "@/notes/javascript/17.md",
       "name": "事件",
+      "date": ""
+    },
+    { "path": "", "name": "TypeSctipt" },
+    {
+      "path": "@/notes/typescript/01.md",
+      "name": "快速入门",
       "date": ""
     }
   ]
