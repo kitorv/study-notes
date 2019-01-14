@@ -86,6 +86,11 @@
       "name": "事件",
       "date": ""
     },
+    {
+      "path": "@/notes/javascript/18.md",
+      "name": "表单脚本",
+      "date": ""
+    },
     { "path": "", "name": "TypeSctipt" },
     {
       "path": "@/notes/typescript/01.md",
