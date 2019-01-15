@@ -91,10 +91,9 @@
       "name": "表单脚本",
       "date": ""
     },
-    { "path": "", "name": "TypeSctipt" },
     {
-      "path": "@/notes/typescript/01.md",
-      "name": "快速入门",
+      "path": "@/notes/javascript/19.md",
+      "name": "Canvas 绘图",
       "date": ""
     }
   ]

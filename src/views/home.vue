@@ -268,7 +268,7 @@ export default {
     left: 0;
     top: 0;
     bottom: 0;
-    padding: 0 0.75rem;
+    padding: 0 0.75rem 1rem 0.75rem;
     overflow-y: auto;
 
     > button {
