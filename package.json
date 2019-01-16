@@ -11,6 +11,8 @@
     "web",
     "frontend"
   ],
+  "author": "kitorv",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kitorv/study-notes"
