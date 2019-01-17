@@ -125,6 +125,8 @@ export default {
     font-size: 0.9rem;
     margin: 0 0.1rem;
     padding: 0.2rem 0.4rem;
+    word-break: break-all;
+    word-wrap: break-word;
   }
 
   > table {
