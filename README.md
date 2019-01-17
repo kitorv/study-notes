@@ -4,6 +4,10 @@
 
 [www.kitorv.com](http://www.kitorv.com)
 
+OR
+
+[https://kitorv.github.io/study-notes](https://kitorv.github.io/study-notes/)
+
 基于 vue 搭建笔记内容使用`markdown`文件编写，自动编译成网站
 
 ## 更新日志
@@ -136,4 +140,4 @@ npm run docs
 - github 项目的`setting`配置=>`GitHub Pages`选择`master branch/docs folder`
 - 保存配置生成访问地址，直接访问
 - 访问项目如果不存在，对应修改`vue.config.js`的`baseUrl`与当前路径匹配
-- 部署配置完成访问 [https://kitorv.github.io/study-notes/](https://kitorv.github.io/study-notes/)
+- 部署配置完成访问 [https://kitorv.github.io/study-notes](https://kitorv.github.io/study-notes/)
