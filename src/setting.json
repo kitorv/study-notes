@@ -98,7 +98,12 @@
     },
     {
       "path": "@/notes/javascript/20.md",
-      "name": "Html5 脚本编程",
+      "name": "Html5脚本编程",
+      "date": ""
+    },
+    {
+      "path": "@/notes/javascript/21.md",
+      "name": "XML与JSON",
       "date": ""
     }
   ]
