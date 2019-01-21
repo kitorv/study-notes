@@ -105,6 +105,11 @@
       "path": "@/notes/javascript/21.md",
       "name": "XML、JSON和AJAX",
       "date": ""
+    },
+    {
+      "path": "@/notes/javascript/22.md",
+      "name": "高级技巧",
+      "date": ""
     }
   ]
 }
