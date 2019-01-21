@@ -110,6 +110,12 @@
       "path": "@/notes/javascript/22.md",
       "name": "高级技巧与新兴API",
       "date": ""
+    },
+    { "path": "", "name": "TypeScript" },
+    {
+      "path": "@/notes/typescript/01.md",
+      "name": "简介和使用",
+      "date": ""
     }
   ]
 }

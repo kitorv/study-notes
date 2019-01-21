@@ -55,7 +55,7 @@ export default {
     font-size: 1.1rem;
     line-height: 2;
     margin: 0.2rem 0 0.8rem;
-    background-image: linear-gradient(135deg, #00cbfd, #01c5ae);
+    background-image: linear-gradient(135deg, #01d0ff, #5ae4b1);
     border: none;
     color: #fff;
 
@@ -71,13 +71,13 @@ export default {
     }
 
     &.k-snippet--tag-javascript {
-      background-image: linear-gradient(135deg, #ffb000, #f58818);
+      background-image: linear-gradient(135deg, #f55555, #ff8239);
       border: none;
       color: #fff;
     }
 
     &.k-snippet--tag-typescript {
-      background-image: linear-gradient(135deg, #ffb000, #f58818);
+      background-image: linear-gradient(135deg, #f55555, #ff8239);
       border: none;
       color: #fff;
     }
