@@ -116,6 +116,11 @@
       "path": "@/notes/typescript/01.md",
       "name": "简介和使用",
       "date": ""
+    },
+    {
+      "path": "@/notes/typescript/02.md",
+      "name": "基础类型",
+      "date": ""
     }
   ]
 }
