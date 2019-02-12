@@ -4,57 +4,57 @@
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用",
-      "date": "2019-01-02"
+      "date": "2019-01-12"
     },
     {
       "path": "@/notes/javascript/02.md",
       "name": "基础类型",
-      "date": "2019-01-03"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/03.md",
       "name": "操作符",
-      "date": "2019-01-05"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/04.md",
       "name": "语句和函数",
-      "date": "2019-01-06"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/05.md",
       "name": "变量、作用域和内存",
-      "date": "2019-01-07"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/06.md",
       "name": "对象、时间、正则",
-      "date": "2019-01-08"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/07.md",
       "name": "数组、函数",
-      "date": "2019-01-09"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/08.md",
       "name": "基本包装类型",
-      "date": "2019-01-10"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/09.md",
       "name": "面向对象设计",
-      "date": "2019-01-15"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/10.md",
       "name": "函数表达式",
-      "date": "2019-01-16"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/11.md",
       "name": "BOM",
-      "date": "2019-01-20"
+      "date": ""
     },
     {
       "path": "@/notes/javascript/12.md",
