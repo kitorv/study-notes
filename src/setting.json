@@ -119,7 +119,12 @@
     },
     {
       "path": "@/notes/typescript/02.md",
-      "name": "类型定义",
+      "name": "数据类型",
+      "date": ""
+    },
+    {
+      "path": "@/notes/typescript/02.md",
+      "name": "面向对象",
       "date": ""
     }
   ]
