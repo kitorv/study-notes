@@ -26,6 +26,12 @@
         <a class="k-v-home--main-link"
            :href="github"><i class="k-icon-star"></i>Star on GitHub</a>
       </div>
+      <div class="k-v-home--main-tags">
+        <div :class="['k-v-home--main-tags-item',{'k-v-home--main-tags-item-active':selectTagIndex==index}]"
+             v-for="({name}, index) in tagList"
+             :key="index"
+             @click="selectTagIndex=index">{{name}}</div>
+      </div>
       <div class="k-v-home--main-content">
         <transition name="k-fade-in">
           <router-view></router-view>
@@ -55,7 +61,8 @@ export default {
       showMenu: windowWidth > 992,
       routeList: routes,
       github: repository.url,
-      showBackToTop: false
+      showBackToTop: false,
+      selectTagIndex: 0
     };
   },
   computed: {
@@ -70,6 +77,9 @@ export default {
     },
     menuClass() {
       return this.showMenu ? "k-icon-close" : "k-icon-menu";
+    },
+    tagList() {
+      return [{ name: "ALL" }, ...routes.filter(m => !m.path)];
     }
   },
   methods: {
@@ -91,6 +101,23 @@ export default {
     handleBackToTop() {
       let scrollTop = this.$refs.main.scrollTop;
       scrollToTop(this.$refs.main, scrollTop, 0);
+    }
+  },
+  watch: {
+    selectTagIndex(index) {
+      if (index == 0) this.routeList = routes;
+      let currIndex = 0;
+      let routeList = [];
+      routes.forEach(route => {
+        if (!route.path) {
+          currIndex++;
+        }
+        if (!routeList[currIndex]) {
+          routeList[currIndex] = [];
+        }
+        routeList[currIndex].push(route);
+      });
+      this.routeList = routeList[index];
     }
   },
   mounted() {
@@ -209,6 +236,50 @@ export default {
           margin-right: 10px;
           font-size: 20px;
         }
+      }
+    }
+
+    .k-v-home--main-tags {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+
+      .k-v-home--main-tags-item {
+        display: inline-block;
+        top: -1px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: #8385aa;
+        white-space: nowrap;
+        border: 1px solid #c8cbf2;
+        line-height: 2;
+        padding: 0 0.5rem;
+        margin: 0 0.1rem;
+        transition: all 0.1s ease-out;
+        outline: 0;
+        user-select: none;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        border-radius: 0.2rem;
+        height: 2rem;
+
+        &:hover {
+          background: #8385aa;
+          border-color: #8385aa;
+          color: #fff;
+        }
+      }
+
+      .k-v-home--main-tags-item-active,
+      .k-v-home--main-tags-item-active:hover {
+        background: #7983ff;
+        border-color: #7983ff;
+        color: #fff;
       }
     }
 

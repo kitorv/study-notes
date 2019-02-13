@@ -1,6 +1,6 @@
 {
   "routes": [
-    { "path": "", "name": "JavaScript 深入理解" },
+    { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
       "name": "简介和使用",
