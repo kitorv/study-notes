@@ -128,31 +128,34 @@ export default {
     word-break: break-all;
     word-wrap: break-word;
   }
+  .k-snippet--table {
+    overflow: auto;
 
-  > table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    empty-cells: show;
-    border: 1px solid #95bae0;
-    width: 100%;
-    margin: 0.8rem 0 1rem;
-    font-size: 1rem;
-
-    th,
-    td {
-      color: #314659;
+    > table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
       border: 1px solid #95bae0;
-      text-align: left;
-      padding: 10px 15px;
-      word-break: break-all;
-      word-wrap: break-word;
-    }
+      width: 100%;
+      margin: 0.8rem 0 1rem;
+      font-size: 1rem;
 
-    th {
-      color: #324b64;
-      font-weight: 700;
-      background: #f1f2f7;
-      min-width: 100px;
+      th,
+      td {
+        color: #314659;
+        border: 1px solid #95bae0;
+        text-align: left;
+        padding: 10px 15px;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+
+      th {
+        color: #324b64;
+        font-weight: 700;
+        background: #f1f2f7;
+        min-width: 100px;
+      }
     }
   }
 

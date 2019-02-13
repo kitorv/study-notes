@@ -18,6 +18,12 @@ module.exports = {
         raw: true,
         preventExtract: true,
         preprocess: function(markdownIt, source) {
+          markdownIt.renderer.rules.table_open = function() {
+            return "<div class='k-snippet--table'><table>";
+          };
+          markdownIt.renderer.rules.table_close = function() {
+            return "</table></div>";
+          };
           return source.replace(/```[a-zA-Z]+/g, value => {
             value = value.toLowerCase();
             return `---snippet ${value.replace(/```/g, "")} \n---\n ${value}`;
