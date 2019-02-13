@@ -105,7 +105,9 @@ export default {
   },
   watch: {
     selectTagIndex(index) {
-      if (index == 0) this.routeList = routes;
+      if (index == 0) {
+        this.routeList = routes;
+      }
       let currIndex = 0;
       let routeList = [];
       routes.forEach(route => {
