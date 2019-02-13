@@ -107,6 +107,7 @@ export default {
     selectTagIndex(index) {
       if (index == 0) {
         this.routeList = routes;
+        return;
       }
       let currIndex = 0;
       let routeList = [];
