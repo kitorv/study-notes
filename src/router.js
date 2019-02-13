@@ -7,20 +7,14 @@ Vue.use(Router);
 let children = [];
 routes.forEach(({ path }) => {
   if (!path) return;
-  let url = path.replace(/@/, "").replace(/.md$/, "");
+  let url = path.replace(/@/, "").replace(/.(md|vue)$/, "");
   children.push({
     path: url,
     name: url,
-    component: () => import(`.${url}.md`)
+    component: () => import(`.${path.replace(/@/, "")}`)
   });
 });
 let firstRoute = { path: "/", name: "notes", component: children[0].component };
-children.push({
-  path: "/plan",
-  name: "plan",
-  component: () => import("@/views/plan.vue")
-});
-
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,

@@ -1,7 +1,12 @@
 <template>
   <div class="k-v-plan">
-    <k-snippet v-for="({date,rows}, index) in planGroupList" :key="index" :title="date">
-      <div v-for="({name,path},index) in rows" :key="index" :class="`k-v-plan--item k-v-plan--item-color-${index}`" @click="handlePalnClick(path)">
+    <k-snippet v-for="({date,rows}, index) in planGroupList"
+               :key="index"
+               :title="date">
+      <div v-for="({name,path},index) in rows"
+           :key="index"
+           :class="`k-v-plan--item k-v-plan--item-color-${index}`"
+           @click="handlePalnClick(path)">
         {{ name }}
       </div>
     </k-snippet>

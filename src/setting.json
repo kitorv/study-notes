@@ -123,8 +123,14 @@
       "date": ""
     },
     {
-      "path": "@/notes/typescript/02.md",
+      "path": "@/notes/typescript/03.md",
       "name": "面向对象",
+      "date": ""
+    },
+    { "path": "", "name": "复习计划" },
+    {
+      "path": "@/views/plan.vue",
+      "name": "时间表",
       "date": ""
     }
   ]

@@ -1,24 +1,29 @@
 <template>
-  <div :class="['k-v-home',mediaClass]" @click="handleClickOutSide">
-    <div class="k-v-home--sidebar" @click.stop>
-      <button @click="showMenu = !showMenu" :class="menuClass"></button>
+  <div :class="['k-v-home',mediaClass]"
+       @click="handleClickOutSide">
+    <div class="k-v-home--sidebar"
+         @click.stop>
+      <button @click="showMenu = !showMenu"
+              :class="menuClass"></button>
       <k-transition-collapse>
         <div v-show="showMenu">
           <template v-for="({path,name},index) in routeList">
-            <h3 v-if="!convertUrl(path)" :key="index">{{name}}</h3>
-            <router-link v-else :key="index" :to="convertUrl(path)" @click.native="handleRouteLinkClick">{{name}}</router-link>
-          </template>
-          <template>
-            <h3>复习计划</h3>
-            <router-link to="/plan" @click.native="handleRouteLinkClick">时间表</router-link>
+            <h3 v-if="!convertUrl(path)"
+                :key="index">{{name}}</h3>
+            <router-link v-else
+                         :key="index"
+                         :to="convertUrl(path)"
+                         @click.native="handleRouteLinkClick">{{name}}</router-link>
           </template>
         </div>
       </k-transition-collapse>
     </div>
-    <div class="k-v-home--main" ref="main">
+    <div class="k-v-home--main"
+         ref="main">
       <div class="k-v-home--main-banner">
         <div>Study Notes</div>
-        <a class="k-v-home--main-link" :href="github"><i class="k-icon-star"></i>Star on GitHub</a>
+        <a class="k-v-home--main-link"
+           :href="github"><i class="k-icon-star"></i>Star on GitHub</a>
       </div>
       <div class="k-v-home--main-content">
         <transition name="k-fade-in">
@@ -70,7 +75,7 @@ export default {
       this.handleClickOutSide();
     },
     convertUrl(path) {
-      return path.replace(/@/, "").replace(/.md$/, "");
+      return path.replace(/@/, "").replace(/.(md|vue)$/, "");
     }
   },
   mounted() {

@@ -6,7 +6,7 @@ const { routes } = require("../src/setting.json");
 const prerenderUrlList = ["/"];
 routes.forEach(({ path }) => {
   if (!path) return;
-  const url = path.replace(/@/, "").replace(/.md$/, "");
+  const url = path.replace(/@/, "").replace(/.(md|vue)$/, "");
   prerenderUrlList.push(url);
 });
 
