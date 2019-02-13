@@ -1,10 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* project id 947725 */
-  src: url("//at.alicdn.com/t/font_947725_u5hdxikzl0j.eot");
-  src: url("//at.alicdn.com/t/font_947725_u5hdxikzl0j.eot?#iefix") format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_947725_u5hdxikzl0j.woff") format("woff"),
-    url("//at.alicdn.com/t/font_947725_u5hdxikzl0j.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_947725_u5hdxikzl0j.svg#iconfont") format("svg");
+  src: url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.eot");
+  src: url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.woff2") format("woff2"), url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.woff") format("woff"),
+    url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.ttf") format("truetype"), url("//at.alicdn.com/t/font_947725_pv3f1xyddwi.svg#iconfont") format("svg");
 }
 
 .iconfont {
@@ -25,6 +23,10 @@
 
 .k-icon-star:before {
   content: "\f2d3";
+}
+
+.k-icon-icon-arrow-up:before {
+  content: "\e769";
 }
 
 [class*="k-icon-"],

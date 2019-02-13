@@ -19,6 +19,7 @@
       </k-transition-collapse>
     </div>
     <div class="k-v-home--main"
+         @scroll="handleScroll"
          ref="main">
       <div class="k-v-home--main-banner">
         <div>Study Notes</div>
@@ -31,6 +32,10 @@
         </transition>
       </div>
     </div>
+    <div :class="['k-v-home--back-top',{'k-v-home--back-top-visiable':showBackToTop}]"
+         @click.stop="handleBackToTop">
+      <i class="k-icon-icon-arrow-up"></i>
+    </div>
   </div>
 </template>
 
@@ -38,6 +43,7 @@
 import KTransitionCollapse from "@/components/k-transition-collapse";
 import { routes } from "../setting";
 import { repository } from "../../package";
+import { scrollToTop } from "../util.js";
 
 export default {
   name: "home",
@@ -48,7 +54,8 @@ export default {
       windowWidth: windowWidth,
       showMenu: windowWidth > 992,
       routeList: routes,
-      github: repository.url
+      github: repository.url,
+      showBackToTop: false
     };
   },
   computed: {
@@ -76,6 +83,14 @@ export default {
     },
     convertUrl(path) {
       return path.replace(/@/, "").replace(/.(md|vue)$/, "");
+    },
+    handleScroll() {
+      let scrollTop = this.$refs.main.scrollTop;
+      this.showBackToTop = scrollTop > 100;
+    },
+    handleBackToTop() {
+      let scrollTop = this.$refs.main.scrollTop;
+      scrollToTop(this.$refs.main, scrollTop, 0);
     }
   },
   mounted() {
@@ -300,5 +315,48 @@ export default {
   .k-v-home--sidebar {
     width: 260px;
   }
+}
+
+.k-v-home--back-top {
+  cursor: pointer;
+  font-weight: 700;
+  background: #fff;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  border-radius: 50%;
+  user-select: none;
+  box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, 0.15);
+  transition: all 0.2s ease-out;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  border: 1px solid rgba(0, 32, 128, 0.1);
+  outline: 0;
+  color: inherit;
+
+  > i {
+    font-size: 1.5rem;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:focus,
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0.8rem 1.6rem -0.2rem rgba(0, 32, 128, 0.15);
+    color: #35a8ff;
+  }
+}
+
+.k-v-home--back-top-visiable {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
