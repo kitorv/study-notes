@@ -18,7 +18,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  height: 100%;
   background: #f2f3f8;
 }
 #app {

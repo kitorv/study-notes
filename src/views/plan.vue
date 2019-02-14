@@ -59,35 +59,36 @@ export default {
 
 <style lang="scss" scoped>
 .k-v-plan {
-  .k-v-plan--item {
-    border: 1px solid rgba(0, 32, 128, 0.1);
-    border-radius: 2px;
-    border-left: 5px solid #ff4c9f;
-    padding: 1rem;
-    margin-bottom: 0.8rem;
-    cursor: pointer;
-  }
+  position: relative;
+}
+.k-v-plan--item {
+  border: 1px solid rgba(0, 32, 128, 0.1);
+  border-radius: 2px;
+  border-left: 5px solid #ff4c9f;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
 
-  .k-v-plan--item-color-0 {
-    border-left-color: #ff4c9f;
-  }
-  .k-v-plan--item-color-1 {
-    border-left-color: #01c5ae;
-  }
-  .k-v-plan--item-color-2 {
-    border-left-color: #7983ff;
-  }
-  .k-v-plan--item-color-3 {
-    border-left-color: #ffb000;
-  }
-  .k-v-plan--item-color-4 {
-    border-left-color: #00cbfd;
-  }
-  .k-v-plan--item-color-5 {
-    border-left-color: #ff7b74;
-  }
-  .k-v-plan--item-color-6 {
-    border-left-color: #5f9de9;
-  }
+.k-v-plan--item-color-0 {
+  border-left-color: #ff4c9f;
+}
+.k-v-plan--item-color-1 {
+  border-left-color: #01c5ae;
+}
+.k-v-plan--item-color-2 {
+  border-left-color: #7983ff;
+}
+.k-v-plan--item-color-3 {
+  border-left-color: #ffb000;
+}
+.k-v-plan--item-color-4 {
+  border-left-color: #00cbfd;
+}
+.k-v-plan--item-color-5 {
+  border-left-color: #ff7b74;
+}
+.k-v-plan--item-color-6 {
+  border-left-color: #5f9de9;
 }
 </style>
