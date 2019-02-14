@@ -127,7 +127,7 @@
       "name": "面向对象",
       "date": ""
     },
-    { "path": "", "name": "复习计划" },
+    { "path": "", "name": "Review" },
     {
       "path": "@/views/plan.vue",
       "name": "时间表",
