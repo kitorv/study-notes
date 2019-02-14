@@ -223,6 +223,7 @@ export default {
 .k-v-home--content {
   height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .k-v-home--banner {
@@ -351,6 +352,7 @@ export default {
   .k-v-home--sidebar-menu {
     max-height: 378px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     box-sizing: border-box;
     padding: 0 0.75rem 0.5rem 0.75rem;
     border-top: 1px solid #5f73a5;
@@ -400,6 +402,7 @@ export default {
     bottom: 0;
     padding: 0 0.75rem 1rem 0.75rem;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     z-index: 100;
   }
 
