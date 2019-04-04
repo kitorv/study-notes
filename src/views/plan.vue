@@ -3,11 +3,13 @@
     <k-snippet v-for="({date,rows}, index) in planGroupList"
                :key="index"
                :title="date">
-      <div v-for="({name,path},index) in rows"
+      <div v-for="({plan:{name,path},day},index) in rows"
            :key="index"
            :class="`k-v-plan--item k-v-plan--item-color-${index}`"
            @click="handlePalnClick(path)">
         {{ name }}
+        <div v-if="day==60"
+             class="k-v-plan--item-last">LAST</div>
       </div>
     </k-snippet>
   </div>
@@ -37,7 +39,7 @@ export default {
           if (!planMap[reviewDateFormat]) {
             planMap[reviewDateFormat] = [];
           }
-          planMap[reviewDateFormat].push(plan);
+          planMap[reviewDateFormat].push({ plan, day: interval });
         });
       });
       let rows = [];
@@ -68,6 +70,8 @@ export default {
   padding: 1rem;
   margin-bottom: 0.8rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .k-v-plan--item-color-0 {
@@ -90,5 +94,19 @@ export default {
 }
 .k-v-plan--item-color-6 {
   border-left-color: #5f9de9;
+}
+
+.k-v-plan--item-last {
+  position: absolute;
+  background: red;
+  background: linear-gradient(145deg, #ff003b, #ff4b39);
+  color: #fff;
+  padding: 1.3rem 1rem 0 1.5rem;
+  font-size: 0.8rem;
+  transform: rotate(40deg);
+  font-weight: 700;
+  top: -1rem;
+  right: -1.4rem;
+  text-align: center;
 }
 </style>
