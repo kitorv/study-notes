@@ -1,11 +1,5 @@
 {
   "routes": [
-    { "path": "", "name": "ECMAScript6" },
-    {
-      "path": "@/notes/ecmascript6/01.md",
-      "name": "变量和解构",
-      "date": ""
-    },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
@@ -116,22 +110,6 @@
       "path": "@/notes/javascript/22.md",
       "name": "高级技巧与新兴API",
       "date": "2019-04-22"
-    },
-    { "path": "", "name": "TypeScript" },
-    {
-      "path": "@/notes/typescript/01.md",
-      "name": "简介和使用",
-      "date": ""
-    },
-    {
-      "path": "@/notes/typescript/02.md",
-      "name": "数据类型",
-      "date": ""
-    },
-    {
-      "path": "@/notes/typescript/03.md",
-      "name": "面向对象",
-      "date": ""
     },
     { "path": "", "name": "Review" },
     {
