@@ -5,16 +5,16 @@ language: node_js
 node_js:
   - "10"
 
-# Travis-CI Caching
+# 设置安装临时缓存文件夹
 cache:
   directories:
     - node_modules
 
-# S: Build Lifecycle
+# 安装以来包
 install:
   - npm install
 
-# 无其他依赖项所以执行npm run build 构建就行了
+# 执行构建命名
 script:
   - npm run serve
 
