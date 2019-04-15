@@ -20,8 +20,8 @@ script:
 deploy:
   provider: pages
   local_dir: dist
-  skip_cleanup: false
+  skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  keep_history: false
+  keep_history: true
   on:
     branch: master
