@@ -127,22 +127,22 @@ npm run prerender
 
 ### 3. travis 自动构建 github-pages 在线访问
 
-1. github 项目的`setting`配置=>`GitHub Pages`选择`gh-pages branch` 生成对应的访问地址[https://kitorv.github.io/study-notes/](https://kitorv.github.io/study-notes/)
-2. [https://github.com/settings/profile](https://github.com/settings/profile)
+- github 项目的`setting`配置=>`GitHub Pages`选择`gh-pages branch` 生成对应的访问地址[https://kitorv.github.io/study-notes/](https://kitorv.github.io/study-notes/)
+- [https://github.com/settings/profile](https://github.com/settings/profile)
 
-=> Developer settings
+  &emsp;&emsp;&emsp;=> Developer settings
 
-=> Personal access tokens
+  &emsp;&emsp;&emsp;=> Personal access tokens
 
-=> Generate new token
+  &emsp;&emsp;&emsp;=> Generate new token
 
-=> 名称：GITHUB_TOKEN
+  &emsp;&emsp;&emsp;=> 名称：GITHUB_TOKEN
 
-=> 勾选 repo
+  &emsp;&emsp;&emsp;=> 勾选 repo
 
-=> 复制 GITHUB_TOKEN
+  &emsp;&emsp;&emsp;=> 复制 GITHUB_TOKEN
 
-3. Github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org)
-4. 添加当前项目到 Travis 自动化部署,设置 `Environment Variables` key 设置为 `GITHUB_TOKEN` 值设置为 `Github生成的GITHUB_TOKEN`
-5. 构建状态 [![Build Status](https://www.travis-ci.org/kitorv/kv-table.svg?branch=master)](https://www.travis-ci.org/kitorv/kv-table)
-6. 提交代码会自动构推送到 `gh-pages ` 访问
+- Github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org)
+- 添加当前项目到 Travis 自动化部署,设置 `Environment Variables` key 设置为 `GITHUB_TOKEN` 值设置为 `Github生成的GITHUB_TOKEN`
+- 构建状态 [![Build Status](https://www.travis-ci.org/kitorv/kv-table.svg?branch=master)](https://www.travis-ci.org/kitorv/kv-table)
+- 提交代码会自动构推送到 `gh-pages ` 访问
