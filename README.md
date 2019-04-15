@@ -2,10 +2,6 @@
 
 ## 在线效果展示
 
-[www.kitorv.com](http://www.kitorv.com)
-
-OR
-
 [https://kitorv.github.io/study-notes](https://kitorv.github.io/study-notes/)
 
 基于 vue 搭建笔记内容使用`markdown`文件编写，自动编译成网站
