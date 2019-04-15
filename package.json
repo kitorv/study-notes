@@ -2,7 +2,7 @@
   "name": "study-notes",
   "version": "0.3.0",
   "title": "Study Notes",
-  "description": "vue+markdown编译学习博客",
+  "description": "vue+markdown 学习笔记编译成网站",
   "homepage": "http://www.kitorv.com",
   "keywords": [
     "vue",
@@ -23,7 +23,6 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "docs": "vue-cli-service build --docs --dest docs",
     "prerender": "vue-cli-service build --prerender",
     "lint": "vue-cli-service lint"
   },
