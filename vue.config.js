@@ -3,6 +3,7 @@ const KMarkdownSnippetCode = require("./webpack/k-markdown-snippet-code");
 const PrerenderSPAPlugin = require("./webpack/prerender-spa-plugin.js");
 
 module.exports = {
+  publicPath: process.argv.includes("--gh-pages") ? "/study-notes" : "/",
   // 配置【vue-markdown-loader】解析md格式的文件
   chainWebpack: config => {
     config.module

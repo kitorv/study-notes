@@ -22,7 +22,7 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --gh-pages",
     "prerender": "vue-cli-service build --prerender",
     "lint": "vue-cli-service lint"
   },
