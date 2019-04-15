@@ -125,15 +125,23 @@ npm run prerender
 
 打包后`dest`文件夹内容直接发布到服务器
 
-### 3. 在线 github 访问部署
+### 3. travis 自动构建 github-pages 在线访问
 
-```bash
-npm run docs
-```
+1. github 项目的`setting`配置=>`GitHub Pages`选择`gh-pages branch` 生成对应的访问地址[https://kitorv.github.io/study-notes/](https://kitorv.github.io/study-notes/)
+2. [https://github.com/settings/profile](https://github.com/settings/profile)
 
-- 打包生成文件夹`docs`
-- `docs`文件夹提交推送到 github
-- github 项目的`setting`配置=>`GitHub Pages`选择`master branch/docs folder`
-- 保存配置生成访问地址，直接访问
-- 访问项目如果不存在，对应修改`vue.config.js`的`baseUrl`与当前路径匹配
-- 部署配置完成访问 [https://kitorv.github.io/study-notes](https://kitorv.github.io/study-notes/)
+=> Developer settings
+
+=> Personal access tokens
+
+=> Generate new token
+
+=> 名称：GITHUB_TOKEN
+
+=> 勾选 repo
+
+=> 复制 GITHUB_TOKEN
+
+3. Github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org)
+4. 添加当前项目到 Travis 自动化部署,设置 `Environment Variables` key 设置为 `GITHUB_TOKEN` 值设置为 `Github生成的GITHUB_TOKEN`
+5. 提交代码会自动构推送到 `gh-pages ` 访问
