@@ -144,4 +144,5 @@ npm run prerender
 
 3. Github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org)
 4. 添加当前项目到 Travis 自动化部署,设置 `Environment Variables` key 设置为 `GITHUB_TOKEN` 值设置为 `Github生成的GITHUB_TOKEN`
-5. 提交代码会自动构推送到 `gh-pages ` 访问
+5. 构建状态 [![Build Status](https://www.travis-ci.org/kitorv/kv-table.svg?branch=master)](https://www.travis-ci.org/kitorv/kv-table)
+6. 提交代码会自动构推送到 `gh-pages ` 访问
