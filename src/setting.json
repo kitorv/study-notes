@@ -1,5 +1,11 @@
 {
   "routes": [
+    { "path": "", "name": "Vue" },
+    {
+      "path": "@/notes/vue/01.md",
+      "name": "Vue+Travis自动构建发布",
+      "date": ""
+    },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
