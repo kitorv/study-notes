@@ -6,6 +6,11 @@
       "name": "Vue+Travis自动构建发布",
       "date": ""
     },
+    {
+      "path": "@/notes/vue/02.md",
+      "name": "Markddown 文档示例",
+      "date": ""
+    },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
