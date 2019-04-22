@@ -11,6 +11,11 @@
       "name": "Markddown 文档示例",
       "date": ""
     },
+    {
+      "path": "@/notes/vue/03.md",
+      "name": "组件开发、发布、安装",
+      "date": ""
+    },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
