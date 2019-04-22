@@ -19,6 +19,8 @@ script:
 
 deploy:
   provider: pages
+  email: 826526881@qq.com
+  name: kitorv
   local_dir: dist
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
