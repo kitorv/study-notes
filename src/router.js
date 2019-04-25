@@ -16,7 +16,7 @@ routes.forEach(({ path }) => {
 });
 let firstRoute = { path: "/", name: "notes", component: children[0].component };
 export default new Router({
-  mode: "history",
+  mode: process.argv.includes("--gh-pages") ? "hash" : "history",
   base: process.env.BASE_URL,
   scrollBehavior() {
     return { x: 0, y: 0 };
