@@ -16,6 +16,11 @@
       "name": "组件开发、发布、安装",
       "date": ""
     },
+    {
+      "path": "@/notes/vue/04.md",
+      "name": "主题配置+复选框",
+      "date": ""
+    },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
