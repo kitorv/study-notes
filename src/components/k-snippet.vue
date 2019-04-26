@@ -83,6 +83,17 @@ export default {
     }
   }
 
+  a {
+    color: #157bda;
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  a:hover {
+    color: #0090ff;
+  }
+
   > p {
     margin: 0.5rem 0 0.5rem 0;
   }
