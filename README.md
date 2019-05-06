@@ -91,9 +91,9 @@ let value = 123456;
 ## `setting.json`文件配置
 
 | 属性 | 必填 | 描述                                    |
-| :--- | :--- | :-------------------------------------- |
-| name | ⭕   | 生成菜单标题或者分组标题                |
-| url  | ❌   | markdown 的文件路径，不配置生成分组标题 |
+| :--- | :--: | :-------------------------------------- |
+| name |  ⭕  | 生成菜单标题或者分组标题                |
+| url  |  ❌  | markdown 的文件路径，不配置生成分组标题 |
 
 > `@`默认`src`目录
 
@@ -166,8 +166,6 @@ script:
 # 发布到gh-pages
 deploy:
   provider: pages
-  email: 826526881@qq.com
-  name: kitorv
   local_dir: dist
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
