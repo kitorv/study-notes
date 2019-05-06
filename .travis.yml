@@ -5,18 +5,15 @@ language: node_js
 node_js:
   - "10"
 
-# 主分支自动构建
-branches:
-  only:
-    - master
-
 # 依赖安装
 install:
   - npm install
 
+# 代码打包
 script:
   - npm run build
 
+# 发布到gh-pages
 deploy:
   provider: pages
   email: 826526881@qq.com
