@@ -86,13 +86,16 @@ let value = 123456;
 
 ## 自动编译成效果
 
-![vue](src/assets/images/snippet-example.png)
+![demo](src/assets/images/readme-01.png)
 
 ## `setting.json`文件配置
 
-- `url`：非必填，markdown 的文件路径，不配置生成分组标题
-- `name`：必填，生成菜单标题或者分组标题
-- `@`默认`src`目录
+| 属性 | 必填 | 描述                                    |
+| :--- | :--- | :-------------------------------------- |
+| name | ⭕   | 生成菜单标题或者分组标题                |
+| url  | ❌   | markdown 的文件路径，不配置生成分组标题 |
+
+> `@`默认`src`目录
 
 ```javascript
 {
@@ -100,8 +103,7 @@ let value = 123456;
     { "path": "", "name": "JavaScript基础" },
     {
       "path": "@/notes/javascript/JAVASCRIPT-01.md",
-      "name": "简介和使用",
-      "date": "2018-12-09"
+      "name": "简介和使用"
     }
   ]
 }
@@ -115,7 +117,7 @@ let value = 123456;
 npm run build
 ```
 
-打包后`dest`文件夹内容直接发布到服务器
+打包后`dist`文件夹内容直接发布到服务器
 
 ### 2. 静态预渲染服务器部署
 
@@ -123,26 +125,61 @@ npm run build
 npm run prerender
 ```
 
-打包后`dest`文件夹内容直接发布到服务器
+打包后`dist`文件夹内容直接发布到服务器
 
 ### 3. travis 自动构建 github-pages 在线访问
 
-- github 项目的`setting`配置=>`GitHub Pages`选择`gh-pages branch` 生成对应的访问地址[https://kitorv.github.io/study-notes/](https://kitorv.github.io/study-notes/)
-- [https://github.com/settings/profile](https://github.com/settings/profile)
+- github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org),开启项目自动构建 `study-notes`
 
-  &emsp;&emsp;&emsp;=> Developer settings
+![start](src/assets/images/readme-02.png)
 
-  &emsp;&emsp;&emsp;=> Personal access tokens
+- github 生成 Token [https://github.com/settings/tokens](https://github.com/settings/tokens),勾线`repo` 生成 token
 
-  &emsp;&emsp;&emsp;=> Generate new token
+![token](src/assets/images/readme-03.png)
 
-  &emsp;&emsp;&emsp;=> 名称：GITHUB_TOKEN
+- 复制生成的 token
 
-  &emsp;&emsp;&emsp;=> 勾选 repo
+![copy](src/assets/images/readme-04.png)
 
-  &emsp;&emsp;&emsp;=> 复制 GITHUB_TOKEN
+- travis 进入 `Settings` 配置环境变量 GITHUB_TOKEN 将 github 生成的 token 添加进去
 
-- Github 账号登陆 [https://www.travis-ci.org](https://www.travis-ci.org)
-- 添加当前项目到 Travis 自动化部署,设置 `Environment Variables` key 设置为 `GITHUB_TOKEN` 值设置为 `Github生成的GITHUB_TOKEN`
-- 构建状态 [![Build Status](https://www.travis-ci.org/kitorv/kv-table.svg?branch=master)](https://www.travis-ci.org/kitorv/kv-table)
-- 提交代码会自动构推送到 `gh-pages` 访问
+![copy](src/assets/images/readme-05.png)
+
+- travis 配置在项目下的`.travis.yml`，具体更多配置查看 [https://docs.travis-ci.com](https://docs.travis-ci.com)
+
+```yml
+#项目构建环境Node
+language: node_js
+
+# Node版本 10
+node_js:
+  - "10"
+
+# 依赖安装
+install:
+  - npm install
+
+# 代码打包
+script:
+  - npm run build
+
+# 发布到gh-pages
+deploy:
+  provider: pages
+  email: 826526881@qq.com
+  name: kitorv
+  local_dir: dist
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
+```
+
+- 提交代码，查看构建状态 [https://www.travis-ci.org/kitorv/study-notes/builds](https://www.travis-ci.org/kitorv/study-notes/builds)
+
+![gh-page](src/assets/images/readme-06.png)
+
+- 构建完成，访问 `gh-page` 地址：[https://kitorv.github.io/study-notes](https://kitorv.github.io/study-notes)
+
+![gh-page](src/assets/images/readme-07.png)

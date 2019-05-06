@@ -3,140 +3,108 @@
     { "path": "", "name": "Vue" },
     {
       "path": "@/notes/vue/01.md",
-      "name": "Vue+Travis自动构建发布",
-      "date": ""
+      "name": "Vue+Travis自动构建发布"
     },
     {
       "path": "@/notes/vue/02.md",
-      "name": "Markddown 文档示例",
-      "date": ""
+      "name": "Markddown 文档示例"
     },
     {
       "path": "@/notes/vue/03.md",
-      "name": "组件开发、发布、安装",
-      "date": ""
+      "name": "组件开发、发布、安装"
     },
     {
       "path": "@/notes/vue/04.md",
-      "name": "主题配置+复选框、单选框",
-      "date": ""
+      "name": "主题配置+复选框、单选框"
     },
     { "path": "", "name": "JavaScript" },
     {
       "path": "@/notes/javascript/01.md",
-      "name": "简介和使用",
-      "date": "2019-04-01"
+      "name": "简介和使用"
     },
     {
       "path": "@/notes/javascript/02.md",
-      "name": "基础类型",
-      "date": "2019-04-02"
+      "name": "基础类型"
     },
     {
       "path": "@/notes/javascript/03.md",
-      "name": "操作符",
-      "date": "2019-04-03"
+      "name": "操作符"
     },
     {
       "path": "@/notes/javascript/04.md",
-      "name": "语句和函数",
-      "date": "2019-04-04"
+      "name": "语句和函数"
     },
     {
       "path": "@/notes/javascript/05.md",
-      "name": "变量、作用域和内存",
-      "date": "2019-04-05"
+      "name": "变量、作用域和内存"
     },
     {
       "path": "@/notes/javascript/06.md",
-      "name": "对象、时间、正则",
-      "date": "2019-04-06"
+      "name": "对象、时间、正则"
     },
     {
       "path": "@/notes/javascript/07.md",
-      "name": "数组、函数",
-      "date": "2019-04-07"
+      "name": "数组、函数"
     },
     {
       "path": "@/notes/javascript/08.md",
-      "name": "基本包装类型",
-      "date": "2019-04-08"
+      "name": "基本包装类型"
     },
     {
       "path": "@/notes/javascript/09.md",
-      "name": "面向对象设计",
-      "date": "2019-04-09"
+      "name": "面向对象设计"
     },
     {
       "path": "@/notes/javascript/10.md",
-      "name": "函数表达式",
-      "date": "2019-04-10"
+      "name": "函数表达式"
     },
     {
       "path": "@/notes/javascript/11.md",
-      "name": "BOM",
-      "date": "2019-04-11"
+      "name": "BOM"
     },
     {
       "path": "@/notes/javascript/12.md",
-      "name": "客户端检测",
-      "date": "2019-04-12"
+      "name": "客户端检测"
     },
     {
       "path": "@/notes/javascript/13.md",
-      "name": "DOM 类型",
-      "date": "2019-04-13"
+      "name": "DOM 类型"
     },
     {
       "path": "@/notes/javascript/14.md",
-      "name": "DOM 操作",
-      "date": "2019-04-14"
+      "name": "DOM 操作"
     },
     {
       "path": "@/notes/javascript/15.md",
-      "name": "DOM 扩展",
-      "date": "2019-04-15"
+      "name": "DOM 扩展"
     },
     {
       "path": "@/notes/javascript/16.md",
-      "name": "DOM2 和 DOM3",
-      "date": "2019-04-16"
+      "name": "DOM2 和 DOM3"
     },
     {
       "path": "@/notes/javascript/17.md",
-      "name": "事件",
-      "date": "2019-04-17"
+      "name": "事件"
     },
     {
       "path": "@/notes/javascript/18.md",
-      "name": "表单脚本",
-      "date": "2019-04-18"
+      "name": "表单脚本"
     },
     {
       "path": "@/notes/javascript/19.md",
-      "name": "Canvas 绘图",
-      "date": "2019-04-19"
+      "name": "Canvas 绘图"
     },
     {
       "path": "@/notes/javascript/20.md",
-      "name": "Html5脚本编程",
-      "date": "2019-04-20"
+      "name": "Html5脚本编程"
     },
     {
       "path": "@/notes/javascript/21.md",
-      "name": "XML、JSON和AJAX",
-      "date": "2019-04-21"
+      "name": "XML、JSON和AJAX"
     },
     {
       "path": "@/notes/javascript/22.md",
-      "name": "高级技巧与新兴API",
-      "date": "2019-04-22"
-    },
-    { "path": "", "name": "Review" },
-    {
-      "path": "@/views/plan.vue",
-      "name": "时间表",
-      "date": ""
+      "name": "高级技巧与新兴API"
     }
   ]
 }
