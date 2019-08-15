@@ -1,5 +1,12 @@
 # 更新日志
 
+## 0.5.0
+
+2019-04-15
+
+- Travis 构建不显示 Markdown 的 lint 提示
+- babel 配置去掉配置文件，使用 package.json 的属性 babel 进行配置
+
 ## 0.4.0
 
 2019-04-15

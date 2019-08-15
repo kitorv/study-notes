@@ -47,6 +47,11 @@
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.5.17"
   },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
   "eslintConfig": {
     "root": true,
     "env": {
@@ -61,6 +66,9 @@
       "parser": "babel-eslint"
     }
   },
+  "eslintIgnore": [
+    "**/*.md"
+  ],
   "postcss": {
     "plugins": {
       "autoprefixer": {}
