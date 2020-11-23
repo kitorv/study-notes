@@ -28,6 +28,7 @@
         </a>
       </div>
     </div>
+    <div class="v-home-sidebar">1</div>
   </div>
 </template>
 
@@ -88,5 +89,21 @@ export default defineComponent({
   &:hover {
     transform: scale(1.2);
   }
+}
+
+.v-home-sidebar {
+  font-size: 16px;
+  background-color: #f5f5f5;
+  width: 300px;
+  position: fixed;
+  z-index: 10;
+  margin: 0;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  padding: 24px 24px 0 24px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
 }
 </style>
