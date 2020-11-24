@@ -36,6 +36,11 @@
       <router-link to="/zzz" class="link">可访问</router-link>
       <router-link to="/xxxx" class="link">SEO优化</router-link>
     </div>
+    <div class="main">
+      <div class="content">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -139,5 +144,16 @@ export default defineComponent({
     border-left-color: #ab47bc;
     color: #ab47bc;
   }
+}
+
+.main {
+  padding-top: 65px;
+  padding-left: 300px;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 42px;
 }
 </style>

@@ -5,8 +5,13 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "index",
-      component: () => import("../views/index.vue")
+      component: () => import("../views/index.vue"),
+      children: [
+        {
+          path: "/",
+          component: () => import("../../notes/internet/01-work.md")
+        }
+      ]
     }
   ]
 });

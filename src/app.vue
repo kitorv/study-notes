@@ -9,63 +9,16 @@ export default defineComponent({});
 </script>
 
 <style lang="scss">
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td,
-hr,
-button,
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  margin: 0;
-  padding: 0;
-}
-
 html,
 body {
   width: 100%;
   height: 100%;
-  color: #242349;
-  font-size: 12px;
-}
-
-ul,
-ol {
-  list-style: none;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0;
+  margin: 0;
 }
 
 a {
-  color: #242349;
   text-decoration: none;
   background-color: transparent;
   outline: none;
@@ -92,6 +45,5 @@ svg {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
-  color: #242349;
 }
 </style>
