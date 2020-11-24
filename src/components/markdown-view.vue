@@ -33,6 +33,7 @@ export default defineComponent({});
   }
 
   pre[class*="language-"] {
+    position: relative;
     font-family: Consolas, Monaco, monospace;
     background: linear-gradient(-30deg, #273149, #242349);
     border-radius: 0.25rem;
@@ -47,7 +48,14 @@ export default defineComponent({});
     word-spacing: normal;
     word-wrap: normal;
     overflow: auto;
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .language {
+    position: absolute;
+    font-size: 12px;
+    top: 0.2rem;
+    right: 1.25rem;
   }
 }
 </style>

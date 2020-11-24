@@ -27,14 +27,14 @@
       </div>
     </div>
     <div class="sidebar">
-      <p class="title">互联网</p>
-      <router-link to="/" class="link">互联网是如何工作</router-link>
-      <router-link to="/zzz" class="link">Http</router-link>
-      <router-link to="/xxxx" class="link">浏览器运行机制</router-link>
-      <p class="title">HTML</p>
-      <router-link to="/dfa" class="link">html基础</router-link>
-      <router-link to="/zzz" class="link">可访问</router-link>
-      <router-link to="/xxxx" class="link">SEO优化</router-link>
+      <p class="title">Group</p>
+      <router-link to="/" class="link">title1</router-link>
+      <router-link to="/zzz" class="link">title2</router-link>
+      <router-link to="/xxxx" class="link">title3</router-link>
+      <p class="title">Group</p>
+      <router-link to="/dfa" class="link">title1</router-link>
+      <router-link to="/zzz" class="link">title2</router-link>
+      <router-link to="/xxxx" class="link">title3</router-link>
     </div>
     <div class="main">
       <div class="content">
@@ -107,7 +107,8 @@ export default defineComponent({
   left: 0;
   bottom: 0;
   top: 65px;
-  width: 300px;
+  max-width: 300px;
+  min-width: 240px;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #f5f5f5;
   z-index: 10;

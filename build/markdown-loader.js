@@ -8,7 +8,7 @@ module.exports = function(source) {
     highlight: function(content, language) {
       language = language && hljs.getLanguage(language) ? language : "html";
       const formatCode = hljs.highlight(language, content, true).value;
-      return `<pre class="language-${language}">${formatCode}</pre>`;
+      return `<pre class="language-${language}">${formatCode}<div class="language">${language}</div></pre>`;
     }
   });
 
