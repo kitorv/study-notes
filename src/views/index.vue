@@ -155,5 +155,6 @@ export default defineComponent({
   max-width: 1280px;
   margin: 0 auto;
   padding: 24px 42px;
+  font-size: 14px;
 }
 </style>

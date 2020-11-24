@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import "highlight.js/styles/monokai-sublime.css";
+
+export default defineComponent({});
+</script>
+
 <style lang="scss" scoped>
 ::v-deep() {
   h1,
@@ -23,6 +30,24 @@
     background: mix(#ab47bc, #ffffff, 5%);
     border: 1px solid mix(#ab47bc, #ffffff, 20%);
     border-radius: 3px;
+  }
+
+  pre[class*="language-"] {
+    font-family: Consolas, Monaco, monospace;
+    background: linear-gradient(-30deg, #273149, #242349);
+    border-radius: 0.25rem;
+    color: #d7ecff;
+    font-size: 14px;
+    line-height: 2;
+    margin: 0;
+    tab-size: 4;
+    text-align: left;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    overflow: auto;
+    padding: 0.75rem 1.25rem;
   }
 }
 </style>
