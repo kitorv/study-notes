@@ -2,6 +2,24 @@
   <div class="view">
     <div class="header">
       <div class="navbar">
+        <div class="menu" @click="onMenuClick">
+          <svg
+            t="1606210572434"
+            class="icon"
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            p-id="7414"
+            width="200"
+            height="200"
+          >
+            <path
+              d="M85.333333 810.666667v-85.333334h853.333334v85.333334H85.333333z m0-256v-85.333334h853.333334v85.333334H85.333333z m0-256V213.333333h853.333334v85.333334H85.333333z"
+              fill="#ffffff"
+              p-id="7415"
+            ></path>
+          </svg>
+        </div>
         <router-link to="/" class="logo">Study Notes</router-link>
         <div class="flex-1" />
         <a
@@ -26,17 +44,17 @@
         </a>
       </div>
     </div>
-    <div class="sidebar">
-      <p class="title">Group</p>
-      <router-link to="/" class="link">title1</router-link>
-      <router-link to="/zzz" class="link">title2</router-link>
-      <router-link to="/xxxx" class="link">title3</router-link>
-      <p class="title">Group</p>
-      <router-link to="/dfa" class="link">title1</router-link>
-      <router-link to="/zzz" class="link">title2</router-link>
-      <router-link to="/xxxx" class="link">title3</router-link>
-    </div>
     <div class="main">
+      <div :class="['sidebar', { 'is-active': menuActive }]">
+        <p class="title">Group</p>
+        <router-link to="/" class="link">title1</router-link>
+        <router-link to="/zzz" class="link">title2</router-link>
+        <router-link to="/xxxx" class="link">title3</router-link>
+        <p class="title">Group</p>
+        <router-link to="/dfa" class="link">title1</router-link>
+        <router-link to="/zzz" class="link">title2</router-link>
+        <router-link to="/xxxx" class="link">title3</router-link>
+      </div>
       <div class="content">
         <router-view />
       </div>
@@ -45,11 +63,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   setup() {
-    return {};
+    const menuActive = ref(false);
+    const onMenuClick = () => {
+      menuActive.value = !menuActive.value;
+    };
+
+    return { menuActive, onMenuClick };
   }
 });
 </script>
@@ -75,6 +98,14 @@ export default defineComponent({
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.menu {
+  display: none;
+  height: 26px;
+  width: 26px;
+  margin-right: 16px;
+  cursor: pointer;
 }
 
 .logo {
@@ -107,14 +138,14 @@ export default defineComponent({
   left: 0;
   bottom: 0;
   top: 65px;
-  max-width: 300px;
-  min-width: 240px;
+  width: 240px;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #f5f5f5;
   z-index: 10;
   margin: 0;
   box-sizing: border-box;
   overflow-y: auto;
+  transition: all 0.3s;
 }
 
 .title {
@@ -148,8 +179,7 @@ export default defineComponent({
 }
 
 .main {
-  padding-top: 65px;
-  padding-left: 300px;
+  padding: 65px 0 0 240px;
 }
 
 .content {
@@ -157,5 +187,45 @@ export default defineComponent({
   margin: 0 auto;
   padding: 24px 42px;
   font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 44px;
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .github {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sidebar {
+    top: 45px;
+    width: 100%;
+    transform: translateX(-100%);
+
+    &.is-active {
+      transform: translateX(0);
+    }
+  }
+
+  .main {
+    padding: 45px 0 0 0;
+  }
+
+  .menu {
+    display: inline-block;
+  }
+
+  .content {
+    margin: 0 auto;
+    padding: 0 12px 24px 12px;
+    font-size: 14px;
+  }
 }
 </style>
