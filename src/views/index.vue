@@ -1,15 +1,13 @@
 <template>
-  <div class="v-home">
-    <div class="v-home-header">
-      <div class="v-home-header-content">
-        <router-link to="/" class="v-home-header-content-logo"
-          >Study Notes</router-link
-        >
-        <div class="v-home-header-content-placeholder" />
+  <div class="view">
+    <div class="header">
+      <div class="navbar">
+        <router-link to="/" class="logo">Study Notes</router-link>
+        <div class="flex-1" />
         <a
           target="_blank"
           href="https://github.com/kitorv/study-notes"
-          class="v-home-header-content-github"
+          class="github"
         >
           <svg
             t="1606136947439"
@@ -28,7 +26,16 @@
         </a>
       </div>
     </div>
-    <div class="v-home-sidebar">1</div>
+    <div class="sidebar">
+      <p class="title">互联网</p>
+      <router-link to="/" class="link">互联网是如何工作</router-link>
+      <router-link to="/zzz" class="link">Http</router-link>
+      <router-link to="/xxxx" class="link">浏览器运行机制</router-link>
+      <p class="title">HTML</p>
+      <router-link to="/dfa" class="link">html基础</router-link>
+      <router-link to="/zzz" class="link">可访问</router-link>
+      <router-link to="/xxxx" class="link">SEO优化</router-link>
+    </div>
   </div>
 </template>
 
@@ -42,17 +49,16 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
-.v-home {
+<style lang="scss" scoped>
+.view {
   height: 100%;
 }
 
-.v-home-header {
+.header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  position: fixed;
-
   box-shadow: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #242349;
@@ -60,26 +66,26 @@ export default defineComponent({
   padding: 0 24px;
 }
 
-.v-home-header-content {
+.navbar {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.v-home-header-content-logo {
+.logo {
   display: flex;
   align-items: center;
   height: 100%;
   color: #ffffff;
-  font-size: 28px;
   font-weight: bold;
+  font-size: 28px;
 }
 
-.v-home-header-content-placeholder {
+.flex-1 {
   flex: 1;
 }
 
-.v-home-header-content-github {
+.github {
   display: inline-block;
   height: 36px;
   width: 36px;
@@ -91,19 +97,47 @@ export default defineComponent({
   }
 }
 
-.v-home-sidebar {
-  font-size: 16px;
-  background-color: #f5f5f5;
-  width: 300px;
+.sidebar {
   position: fixed;
-  z-index: 10;
-  margin: 0;
-  top: 65px;
   left: 0;
   bottom: 0;
-  padding: 24px 24px 0 24px;
-  box-sizing: border-box;
+  top: 65px;
+  width: 300px;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #f5f5f5;
+  z-index: 10;
+  margin: 0;
+  box-sizing: border-box;
   overflow-y: auto;
+}
+
+.title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.44);
+  margin: 20px 24px 6px 24px;
+  text-transform: uppercase;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+.link {
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 20px;
+  border-left: 4px solid transparent;
+
+  &.router-link-active {
+    border-left-color: #ab47bc;
+    color: #ab47bc;
+  }
 }
 </style>
